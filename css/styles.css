@@ -146,28 +146,28 @@ body {
     margin-top: -2rem;
   }
 }
-/* Floating Welcome text over hero – no background */
+/* Floating Welcome text over the hero image – no background */
 .welcome-float {
   position: absolute;
-  bottom: 3rem;
+  bottom: 2.5rem;
   left: 50%;
   transform: translateX(-50%);
-  text-align: center;
   max-width: 900px;
+  text-align: center;
   padding: 0 1.5rem;
-  pointer-events: none; /* avoid blocking clicks on button */
+  pointer-events: none; /* don't block button clicks */
 }
 
 .welcome-float h2 {
   margin-bottom: 0.75rem;
   color: #ffffff;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.65);
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
 }
 
 .welcome-float p {
   color: #f9fafb;
   font-weight: 500;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
 }
