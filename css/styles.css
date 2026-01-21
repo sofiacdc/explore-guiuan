@@ -219,4 +219,13 @@ body {
   margin-top: 1.5rem;
   font-size: 1rem;
 }
+/* ==========================
+   CENTERED SECTION WRAPPER
+   ========================== */
+
+.section-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
 
