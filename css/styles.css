@@ -26,18 +26,11 @@ body {
   line-height: 1.6;
 }
 
-/* HERO WITH CALICOAN PHOTO */
+/* HERO – PURE PHOTO, NO OVERLAY */
 .hero {
-  min-height: 80vh;
+  min-height: 85vh;
 
-  /* Calicoan surf photo + oceany overlay */
-  background-image:
-    linear-gradient(
-      rgba(6, 95, 70, 0.55),
-      rgba(15, 118, 110, 0.85)
-    ),
-    url("../calicoan-hero.jpg");
-
+  background-image: url("../calicoan-hero.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -46,6 +39,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+
   color: #ffffff;
   padding: 3rem 1.5rem;
 }
