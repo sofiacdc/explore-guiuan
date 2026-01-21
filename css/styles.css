@@ -181,10 +181,20 @@ body {
 
 /* Extra gap under the cards grid before the next section */
 .section .cards {
-  margin-bottom: 5rem;
+  margin-bottom: 6.5rem;   /* was 5rem */
 }
 
 /* Extra gap before the "Plan Your Trip" section */
 #plan-trip {
-  margin-top: 5rem;
+  margin-top: 0;           /* let the h2 handle spacing */
+}
+/* Make the Plan Your Trip heading sit closer to its text */
+#plan-trip h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;   /* smaller than the default */
+  text-align: center;
+}
+
+#plan-trip p {
+  text-align: center;
 }
