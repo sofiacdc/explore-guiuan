@@ -54,22 +54,13 @@ body {
 }
 
 /* CONTENT SECTIONS */
-/* Plain section variant for the Welcome text (no box, bold text) */
-.section.section-plain {
-  background: transparent;
-  box-shadow: none;
-  border-radius: 0;
-  max-width: 900px;
-}
-
-.section.section-plain h2,
-.section.section-plain p {
-  font-weight: 600;
-}
-
-.section.section-plain p {
+/* Center section headings */
+.section h2 {
   text-align: center;
+  margin-bottom: 2rem;
+  color: var(--ocean-deep);
 }
+
 
 /* UTILITIES */
 .center {
