@@ -198,3 +198,23 @@ body {
 #plan-trip p {
   text-align: center;
 }
+/* ----- PLAN YOUR TRIP SPACING & ALIGNMENT ----- */
+
+#plan-trip {
+  text-align: center;
+  margin-top: 6rem;        /* space from cards above */
+}
+
+#plan-trip h2 {
+  margin-bottom: 1.2rem;  /* space between title and paragraph */
+}
+
+#plan-trip p {
+  margin: 0 auto 1.4rem;  /* space below paragraph */
+  max-width: 700px;       /* keeps text readable */
+}
+
+#plan-trip .email {
+  margin-top: 0;          /* keeps email close but distinct */
+  font-weight: 600;
+}
