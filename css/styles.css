@@ -17,17 +17,19 @@
 /* BASE */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: var(--ocean-aqua);
+  background: linear-gradient(
+    180deg,
+    #a5f3fc 0%,
+    #ecfeff 35%,
+    #f9fafb 100%
+  );
   color: var(--text-dark);
   line-height: 1.6;
-}
-
 }
 
 /* HERO – PURE PHOTO, NO OVERLAY */
 .hero {
   min-height: 85vh;
-
   background-image: url("../calicoan-hero.jpg");
   background-size: cover;
   background-position: center;
@@ -40,4 +42,115 @@ body {
 
   color: #ffffff;
   padding: 3rem 1.5rem;
+}
+
+/* Slight text shadow so it is readable on the photo */
+.hero h1,
+.hero p,
+.hero a {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* CONTENT SECTIONS */
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  background: #ffffff;
+  border-radius: 2rem;
+  box-shadow: 0 20px 40px rgba(15, 118, 110, 0.08);
+}
+
+/* First section overlaps the hero a bit for a nice transition */
+.section:first-of-type {
+  margin-top: -3rem;
+}
+
+/* Ocean color section (for Top Destinations) */
+.section.light {
+  background: linear-gradient(
+    135deg,
+    #ccfbf1,
+    #99f6e4
+  );
+}
+
+/* UTILITIES */
+.center {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* DESTINATION CARDS LAYOUT */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+.card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 40px rgba(20, 184, 166, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  color: var(--ocean-deep);
+  margin-bottom: 0.5rem;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  background: #ffffff;
+  color: var(--ocean-deep);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* FOOTER */
+.footer {
+  background: linear-gradient(
+    135deg,
+    var(--ocean-deep),
+    var(--ocean-green)
+  );
+  color: #ffffff;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .hero {
+    min-height: 65vh;
+    padding: 2.5rem 1.25rem;
+  }
+
+  .section {
+    padding: 3rem 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .section:first-of-type {
+    margin-top: -2rem;
+  }
 }
