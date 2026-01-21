@@ -198,23 +198,25 @@ body {
 #plan-trip p {
   text-align: center;
 }
-/* ----- PLAN YOUR TRIP SPACING & ALIGNMENT ----- */
-
+/* PLAN YOUR TRIP SPACING & ALIGNMENT */
 #plan-trip {
   text-align: center;
-  margin-top: 6rem;        /* space from cards above */
+  padding: 6rem 1.5rem 7rem;
 }
 
-#plan-trip h2 {
-  margin-bottom: 1.2rem;  /* space between title and paragraph */
+#plan-trip .section-title {
+  margin-bottom: 2rem;
 }
 
-#plan-trip p {
-  margin: 0 auto 1.4rem;  /* space below paragraph */
-  max-width: 700px;       /* keeps text readable */
+.plan-text {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
-#plan-trip .email {
-  margin-top: 0;          /* keeps email close but distinct */
-  font-weight: 600;
+.email {
+  margin-top: 1.5rem;
+  font-size: 1rem;
 }
+
