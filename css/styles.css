@@ -17,25 +17,45 @@
 /* BASE */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: var(--ocean-aqua);
+  background: linear-gradient(
+    180deg,
+    #99f6e4 0%,
+    var(--ocean-aqua) 35%
+  );
   color: var(--text-dark);
   line-height: 1.6;
 }
 
-/* HERO */
+/* HERO WITH CALICOAN PHOTO */
 .hero {
-  min-height: 70vh;
-  background: linear-gradient(
-    135deg,
-    var(--ocean-green),
-    var(--ocean-green-light)
-  );
+  min-height: 80vh;
+  background:
+    linear-gradient(
+      rgba(6, 95, 70, 0.55),
+      rgba(15, 118, 110, 0.85)
+    ),
+    url("../calicoan-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: #ffffff;
   padding: 3rem 1.5rem;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  margin-bottom: 0.75rem;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  margin-bottom: 1.5rem;
 }
 
 /* BUTTON */
@@ -47,6 +67,12 @@ body {
   border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* SECTIONS */
@@ -58,7 +84,6 @@ body {
   border-radius: 2rem;
 }
 
-/* LIGHT OCEAN SECTION */
 .section.light {
   background: linear-gradient(
     135deg,
@@ -67,7 +92,6 @@ body {
   );
 }
 
-/* HEADINGS */
 .section h2 {
   font-size: 2rem;
   text-align: center;
@@ -124,4 +148,4 @@ body {
   .section {
     padding: 3rem 1.25rem;
   }
-} 
+}
