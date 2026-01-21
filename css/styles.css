@@ -52,27 +52,21 @@ body {
 }
 
 /* CONTENT SECTIONS */
-.section {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 4rem 1.5rem;
-  background: #ffffff;
-  border-radius: 2rem;
-  box-shadow: 0 20px 40px rgba(15, 118, 110, 0.08);
+/* Plain section variant for the Welcome text (no box, bold text) */
+.section.section-plain {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  max-width: 900px;
 }
 
-/* First section overlaps the hero a bit for a nice transition */
-.section:first-of-type {
-  margin-top: -3rem;
+.section.section-plain h2,
+.section.section-plain p {
+  font-weight: 600;
 }
 
-/* Ocean color section (for Top Destinations) */
-.section.light {
-  background: linear-gradient(
-    135deg,
-    #ccfbf1,
-    #99f6e4
-  );
+.section.section-plain p {
+  text-align: center;
 }
 
 /* UTILITIES */
