@@ -171,21 +171,20 @@ body {
   font-weight: 500;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
 }
+/* ----- SECTION SPACING ----- */
 
-/* SECTION SPACING FIX */
-
-/* Space before and after section titles */
+/* Space above and below section titles like "Top Destinations" */
 .section-title {
-  margin-top: 5rem;
+  margin-top: 4rem;
   margin-bottom: 3rem;
 }
 
-/* Extra space between card grid and next section */
-.destinations-grid {
-  margin-bottom: 6rem;
+/* Extra gap under the cards grid before the next section */
+.section .cards {
+  margin-bottom: 5rem;
 }
 
-/* Space before Plan Your Trip section */
-.plan-trip {
-  margin-top: 6rem;
+/* Extra gap before the "Plan Your Trip" section */
+#plan-trip {
+  margin-top: 5rem;
 }
