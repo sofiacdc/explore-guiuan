@@ -17,7 +17,7 @@
   </div>
 
   <!-- Floating Welcome -->
-  <div class="welcome-float">
+  <div class="welcome-float" id="welcomeFloat">
     <h2>Welcome</h2>
     <p>
       Discover Guiuan, Calicoan Island, and nearby municipalities in Eastern Samar.
@@ -107,6 +107,19 @@
   <footer class="footer">
     <p>© 2026 Explore Guiuan · Eastern Samar</p>
   </footer>
+<script>
+  (function () {
+    const welcome = document.getElementById('welcomeFloat');
+    if (!welcome) return;
+
+    window.addEventListener('scroll', function () {
+      const maxFade = 250; // pixels to fully fade
+      const scrolled = window.scrollY || window.pageYOffset;
+      const opacity = Math.max(0, 1 - scrolled / maxFade);
+      welcome.style.opacity = opacity;
+    });
+  })();
+</script>
 
 </body>
 </html>
