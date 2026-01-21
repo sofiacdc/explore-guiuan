@@ -219,6 +219,8 @@ body {
 .email {
   margin-top: 1.5rem;
   font-size: 1rem;
+  .email strong {
+  color: var(--ocean-deep);
 }
 /* ==========================
    CENTERED SECTION WRAPPER
