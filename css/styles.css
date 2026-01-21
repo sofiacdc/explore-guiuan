@@ -17,13 +17,11 @@
 /* BASE */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: linear-gradient(
-    180deg,
-    #99f6e4 0%,
-    var(--ocean-aqua) 35%
-  );
+  background: var(--ocean-aqua);
   color: var(--text-dark);
   line-height: 1.6;
+}
+
 }
 
 /* HERO – PURE PHOTO, NO OVERLAY */
