@@ -29,12 +29,15 @@ body {
 /* HERO WITH CALICOAN PHOTO */
 .hero {
   min-height: 80vh;
-  background:
+
+  /* Calicoan surf photo + oceany overlay */
+  background-image:
     linear-gradient(
       rgba(6, 95, 70, 0.55),
       rgba(15, 118, 110, 0.85)
     ),
     url("../calicoan-hero.jpg");
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -45,107 +48,4 @@ body {
   text-align: center;
   color: #ffffff;
   padding: 3rem 1.5rem;
-}
-
-.hero-content h1 {
-  font-size: clamp(2.4rem, 5vw, 3.2rem);
-  margin-bottom: 0.75rem;
-}
-
-.hero-content p {
-  font-size: 1.1rem;
-  opacity: 0.95;
-  margin-bottom: 1.5rem;
-}
-
-/* BUTTON */
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.75rem;
-  background: #ffffff;
-  color: var(--ocean-deep);
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* SECTIONS */
-.section {
-  padding: 4rem 1.5rem;
-  max-width: 1100px;
-  margin: 3rem auto;
-  background: #ffffff;
-  border-radius: 2rem;
-}
-
-.section.light {
-  background: linear-gradient(
-    135deg,
-    #ccfbf1,
-    #99f6e4
-  );
-}
-
-.section h2 {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: var(--ocean-deep);
-}
-
-.center {
-  text-align: center;
-  max-width: 700px;
-  margin: auto;
-}
-
-/* CARDS */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.75rem;
-  margin-top: 2.5rem;
-}
-
-.card {
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 1.25rem;
-  box-shadow: 0 20px 40px rgba(20, 184, 166, 0.2);
-}
-
-.card h3 {
-  color: var(--ocean-deep);
-  margin-bottom: 0.5rem;
-}
-
-/* FOOTER */
-.footer {
-  background: linear-gradient(
-    135deg,
-    var(--ocean-deep),
-    var(--ocean-green)
-  );
-  color: #ffffff;
-  text-align: center;
-  padding: 2rem;
-  margin-top: 4rem;
-  font-size: 0.9rem;
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-  .hero {
-    min-height: 60vh;
-  }
-
-  .section {
-    padding: 3rem 1.25rem;
-  }
 }
