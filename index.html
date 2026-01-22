@@ -244,4 +244,26 @@
 })();
 </script>
 
+<script>
+(function () {
+  const welcome = document.querySelector('.welcome-float');
+  if (!welcome) return;
+
+  function handleScroll() {
+    const y = window.scrollY || window.pageYOffset;
+
+    if (y > 80) {
+      welcome.style.opacity = '0';   // fade out after you scroll a bit
+    } else {
+      welcome.style.opacity = '1';   // visible at the top
+    }
+  }
+
+  // run once on load
+  handleScroll();
+
+  // update on scroll
+  window.addEventListener('scroll', handleScroll);
+})();
+</script>
 
