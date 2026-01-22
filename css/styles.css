@@ -104,6 +104,16 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.card p {
+  text-decoration: none;
+  color: var(--text-dark);
+  transition: color 0.2s ease;
+}
+
+.card:hover p {
+  color: var(--ocean-deep);
+}
+
 /* BUTTON */
 .btn {
   display: inline-block;
