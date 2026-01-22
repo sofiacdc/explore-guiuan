@@ -238,16 +238,17 @@ body {
 .detail-section {
   display: none;
   max-width: 900px;
-  margin: 4rem auto;
+  margin: 6rem auto;
   padding: 2rem;
   text-align: center;
 }
 
-/* Show only the active one */
-.detail-section.active {
+/* Show section only when its card is clicked */
+.detail-section:target {
   display: block;
 }
 
+/* Video styling */
 .detail-section video {
   width: 100%;
   max-width: 800px;
