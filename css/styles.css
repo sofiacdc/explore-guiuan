@@ -233,9 +233,9 @@ body {
   text-align: center;
 }
   
-/* ===== DESTINATION DETAIL SECTIONS (HIDDEN UNTIL CLICK) ===== */
+/* Destination detail sections - hidden until a card is clicked */
 .detail-section {
-  display: none;              /* <-- this hides them */
+  display: none;            /* HIDE by default */
   max-width: 1000px;
   margin: 4rem auto 6rem;
   padding: 2rem 1.5rem;
@@ -247,10 +247,12 @@ body {
   color: var(--ocean-deep);
 }
 
+/* Only the active one is visible */
 .detail-section.active {
-  display: block;             /* only the active one is shown */
+  display: block;
 }
 
+/* Video styling */
 .detail-section video {
   width: 100%;
   max-width: 800px;
