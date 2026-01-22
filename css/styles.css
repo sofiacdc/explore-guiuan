@@ -132,6 +132,19 @@ body {
   text-decoration: none;
   font-weight: 600;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+.btn-secondary {
+  margin-top: 1rem;
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.btn-secondary:hover {
+  background: #ffffff;
+  color: var(--ocean-deep);
+}
+
 }
 
 .btn:hover {
