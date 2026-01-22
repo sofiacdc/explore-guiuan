@@ -203,21 +203,18 @@
 
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2026 Explore Guiuan · Eastern Samar</p>
-  </footer>
 <script>
   (function () {
-    const welcome = document.getElementById('welcomeFloat');
-    if (!welcome) return;
+    const details = document.querySelectorAll('.detail-section');
 
-    window.addEventListener('scroll', function () {
-      const maxFade = 250; // pixels to fully fade
-      const scrolled = window.scrollY || window.pageYOffset;
-      const opacity = Math.max(0, 1 - scrolled / maxFade);
-      welcome.style.opacity = opacity;
-    });
+    function showSectionFromHash() {
+      const hash = window.location.hash.replace('#', '');
+      details.forEach(section => {
+        section.classList.toggle('active', section.id === hash);
+      });
+    }
+
+    showSectionFromHash();
+    window.addEventListener('hashchange', showSectionFromHash);
   })();
 </script>
-</body>
-</html>
