@@ -81,7 +81,9 @@
       <p>A cultural and heritage site showcasing local traditions, food, and community stories.</p>
     </a>
   </div>
-</section>  <!-- this closes the Destinations section above -->
+</section>  
+  
+  <!-- this closes the Destinations section above -->
 
   <!-- DETAILS (hidden by default) -->
   <!-- CALICOAN DETAILS -->
@@ -188,7 +190,7 @@
   <h2>Kaunan ni Sangkay</h2>
 
   <video controls>
-    <source src="handig.mp4.mp4" type="video/mp4">
+    <source src="kaunannisangkay.mp4.mp4" type="video/mp4">
   </video>
 
   <p>A cultural and heritage site showcasing local traditions, food, and community stories.</p>
@@ -267,7 +269,7 @@
 <section id="kaunan-ni-sangkay" class="detail-section">
   <h2>Kaunan ni Sangkay/h2>
   <video controls>
-    <source src="handig.mp4.mp4" type="video/mp4">
+    <source src="kaunannisangkay.mp4.mp4" type="video/mp4">
   </video>
   <p>A cultural and heritage site showcasing local traditions, food, and community stories.</p>
 </section>    
@@ -287,40 +289,30 @@
 
   <!-- FOOTER -->
 <script>
-  (function () {
-    const details = document.querySelectorAll('.detail-section');
+(function () {
+  const details = document.querySelectorAll('.detail-section');
 
-    function showSectionFromHash() {
-      const hash = window.location.hash.replace('#', '');
-      details.forEach(section => {
-        section.classList.toggle('active', section.id === hash);
-      });
-    }
+  function showSectionFromHash() {
+    const hash = window.location.hash.slice(1); // remove '#'
 
-    showSectionFromHash();
-    window.addEventListener('hashchange', showSectionFromHash);
-  })();
-</script>
+    details.forEach(section => {
+      const isActive = section.id === hash;
+      const video = section.querySelector('video');
 
-<script>
-  const detailSections = document.querySelectorAll('.detail-section');
+      section.classList.toggle('active', isActive);
 
-  function showDetailFromHash() {
-    const hash = window.location.hash.substring(1);
-
-    detailSections.forEach(section => {
-      section.classList.remove('active');
-    });
-
-    if (hash) {
-      const activeSection = document.getElementById(hash);
-      if (activeSection) {
-        activeSection.classList.add('active');
-        activeSection.scrollIntoView({ behavior: 'smooth' });
+      // auto-pause + reset hidden videos
+      if (!isActive && video) {
+        video.pause();
+        video.currentTime = 0;
       }
-    }
+    });
   }
 
-  window.addEventListener('hashchange', showDetailFromHash);
+  // run on load
+  showSectionFromHash();
+
+  // support card clicks + back button
+  window.addEventListener('hashchange', showSectionFromHash);
+})();
 </script>
-  
