@@ -245,7 +245,7 @@
 
 
 
-  <!-- FOOTER -->
+<!-- FOOTER SCRIPTS -->
 <script>
 (function () {
   const details = document.querySelectorAll('.detail-section');
@@ -260,10 +260,16 @@
       // show/hide this section
       section.classList.toggle('active', isActive);
 
-      // auto-pause + reset hidden videos
-      if (!isActive && video) {
-        video.pause();
-        video.currentTime = 0;
+      if (video) {
+        if (isActive) {
+          // auto-play the active video
+          video.currentTime = 0;
+          video.play();
+        } else {
+          // pause + reset hidden videos
+          video.pause();
+          video.currentTime = 0;
+        }
       }
     });
   }
@@ -278,31 +284,20 @@
 
 <script>
 (function () {
-  const details = document.querySelectorAll('.detail-section');
+  const welcome = document.querySelector('.welcome-float');
+  if (!welcome) return;
 
-  function showSectionFromHash() {
-    const hash = window.location.hash.slice(1);
-
-    details.forEach(section => {
-      const isActive = section.id === hash;
-      const video = section.querySelector('video');
-
-      // show / hide section
-      section.classList.toggle('active', isActive);
-
-      if (video) {
-        if (isActive) {
-          video.currentTime = 0;
-          video.play();          // ▶ AUTO-PLAY active video
-        } else {
-          video.pause();         // ⏸ pause others
-          video.currentTime = 0; // reset
-        }
-      }
-    });
+  function handleScroll() {
+    const y = window.scrollY || window.pageYOffset;
+    welcome.style.opacity = y > 80 ? '0' : '1';
   }
 
-  showSectionFromHash();
-  window.addEventListener('hashchange', showSectionFromHash);
+  // run once on load
+  handleScroll();
+
+  // update on scroll
+  window.addEventListener('scroll', handleScroll);
 })();
 </script>
+</body>
+</html>
