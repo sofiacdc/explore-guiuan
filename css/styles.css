@@ -234,37 +234,23 @@ body {
 }
 /* ===== DESTINATION DETAIL SECTIONS (HIDDEN UNTIL CLICK) ===== */
 
-/* Hidden by default */
+/* Hide destination detail sections by default */
 .detail-section {
   display: none;
   max-width: 900px;
-  margin: 6rem auto;
-  padding: 0 1.5rem;
+  margin: 4rem auto;
+  padding: 2rem;
   text-align: center;
 }
 
-/* When its id matches the URL hash (#calicoan, #abcd-surf, etc.) */
-.detail-section:target {
+/* Show only the active one */
+.detail-section.active {
   display: block;
-}
-
-/* Styling inside the detail sections */
-.detail-section h2 {
-  margin-bottom: 1.5rem;
-  color: var(--ocean-deep);
 }
 
 .detail-section video {
   width: 100%;
   max-width: 800px;
+  margin: 2rem auto;
   border-radius: 1rem;
-  margin: 0 auto 1.5rem;
-  display: block;
-}
-
-.detail-section p {
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.7;
-  color: #355f5b;
 }
