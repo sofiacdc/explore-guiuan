@@ -232,6 +232,7 @@ body {
   margin: 0 auto;
   text-align: center;
 }
+  
 /* ===== DESTINATION DETAIL SECTIONS (HIDDEN UNTIL CLICK) ===== */
 .detail-section {
   display: none;              /* <-- this hides them */
