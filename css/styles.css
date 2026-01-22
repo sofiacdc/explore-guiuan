@@ -232,14 +232,23 @@ body {
   margin: 0 auto;
   text-align: center;
 }
-/* ===== DESTINATION DETAIL SECTIONS ===== */
+/* ===== DESTINATION DETAIL SECTIONS (HIDDEN UNTIL CLICK) ===== */
+
+/* Hidden by default */
 .detail-section {
+  display: none;
   max-width: 900px;
   margin: 6rem auto;
   padding: 0 1.5rem;
   text-align: center;
 }
 
+/* When its id matches the URL hash (#calicoan, #abcd-surf, etc.) */
+.detail-section:target {
+  display: block;
+}
+
+/* Styling inside the detail sections */
 .detail-section h2 {
   margin-bottom: 1.5rem;
   color: var(--ocean-deep);
@@ -259,4 +268,3 @@ body {
   line-height: 1.7;
   color: #355f5b;
 }
-
