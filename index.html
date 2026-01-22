@@ -225,6 +225,7 @@
       const isActive = section.id === hash;
       const video = section.querySelector('video');
 
+      // show/hide this section
       section.classList.toggle('active', isActive);
 
       // auto-pause + reset hidden videos
@@ -235,10 +236,11 @@
     });
   }
 
-  // run on load
+  // run on load (so nothing shows if there's no hash)
   showSectionFromHash();
 
-  // support card clicks + back button
+  // run whenever hash changes (click card, back button, etc.)
   window.addEventListener('hashchange', showSectionFromHash);
 })();
 </script>
+
