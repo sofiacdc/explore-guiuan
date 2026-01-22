@@ -246,24 +246,31 @@
 
 <script>
 (function () {
-  const welcome = document.querySelector('.welcome-float');
-  if (!welcome) return;
+  const details = document.querySelectorAll('.detail-section');
 
-  function handleScroll() {
-    const y = window.scrollY || window.pageYOffset;
+  function showSectionFromHash() {
+    const hash = window.location.hash.slice(1);
 
-    if (y > 80) {
-      welcome.style.opacity = '0';   // fade out after you scroll a bit
-    } else {
-      welcome.style.opacity = '1';   // visible at the top
-    }
+    details.forEach(section => {
+      const isActive = section.id === hash;
+      const video = section.querySelector('video');
+
+      // show / hide section
+      section.classList.toggle('active', isActive);
+
+      if (video) {
+        if (isActive) {
+          video.currentTime = 0;
+          video.play();          // ▶ AUTO-PLAY active video
+        } else {
+          video.pause();         // ⏸ pause others
+          video.currentTime = 0; // reset
+        }
+      }
+    });
   }
 
-  // run once on load
-  handleScroll();
-
-  // update on scroll
-  window.addEventListener('scroll', handleScroll);
+  showSectionFromHash();
+  window.addEventListener('hashchange', showSectionFromHash);
 })();
 </script>
-
