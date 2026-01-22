@@ -233,22 +233,23 @@ body {
   text-align: center;
 }
 /* ===== DESTINATION DETAIL SECTIONS (HIDDEN UNTIL CLICK) ===== */
-
-/* Hide all detail sections by default */
 .detail-section {
-  display: none;
+  display: none;              /* <-- this hides them */
   max-width: 1000px;
   margin: 4rem auto 6rem;
   padding: 2rem 1.5rem;
   text-align: center;
 }
 
-/* Show only the active one */
-.detail-section.active {
-  display: block;
+.detail-section h2 {
+  margin-bottom: 1.5rem;
+  color: var(--ocean-deep);
 }
 
-/* Video styling */
+.detail-section.active {
+  display: block;             /* only the active one is shown */
+}
+
 .detail-section video {
   width: 100%;
   max-width: 800px;
