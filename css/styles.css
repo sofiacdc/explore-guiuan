@@ -234,17 +234,17 @@ body {
 }
 /* ===== DESTINATION DETAIL SECTIONS (HIDDEN UNTIL CLICK) ===== */
 
-/* Hide destination detail sections by default */
+/* Hide all detail sections by default */
 .detail-section {
   display: none;
-  max-width: 900px;
-  margin: 6rem auto;
-  padding: 2rem;
+  max-width: 1000px;
+  margin: 4rem auto 6rem;
+  padding: 2rem 1.5rem;
   text-align: center;
 }
 
-/* Show section only when its card is clicked */
-.detail-section:target {
+/* Show only the active one */
+.detail-section.active {
   display: block;
 }
 
