@@ -481,6 +481,76 @@ body {
   border-radius: 1rem;
 }
 
+/* ===== PLACES TO STAY – PINTEREST GRID ===== */
+
+.stay-grid {
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+  padding: 2rem 1.5rem 0;
+  column-count: 3;           /* Pinterest style */
+  column-gap: 1.5rem;
+}
+
+.stay-card {
+  break-inside: avoid;       /* prevent cards from splitting */
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 1.5rem;
+  background: #ffffff;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(20, 184, 166, 0.18);
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.stay-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 45px rgba(20, 184, 166, 0.25),
+    0 0 0 1px rgba(20, 184, 166, 0.2);
+}
+
+.stay-card-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.stay-card-info {
+  padding: 0.9rem 1.1rem 1.1rem;
+}
+
+.stay-card-info h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+  color: var(--ocean-deep);
+}
+
+.stay-card-info p {
+  font-size: 0.9rem;
+  color: rgba(8, 51, 68, 0.85);
+}
+
+/* Responsive columns */
+@media (max-width: 900px) {
+  .stay-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .stay-grid {
+    column-count: 1;
+    padding: 1.5rem 1.25rem 0;
+  }
+}
+
 /* ===== PLACES TO STAY CAROUSEL ===== */
 
 .stay-carousel {
