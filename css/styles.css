@@ -100,6 +100,18 @@ body {
   color: var(--ocean-deep);
 }
 
+/* Outline button (for Discover Destinations) */
+.btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.btn-outline:hover {
+  background: #ffffff;
+  color: var(--ocean-deep);
+}
+
 .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
