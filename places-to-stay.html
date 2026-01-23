@@ -5,84 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Places to Stay | Explore Guiuan</title>
 
-  <!-- Use the SAME CSS as your homepage -->
+  <!-- Reuse your main stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
 
-  <!-- SIMPLE HEADER / HERO -->
-<header class="hero hero-stay">
-  <div class="hero-inner">
-    <h1>Places to Stay</h1>
-    <p>Resorts, homestays, and beachfront escapes in Guiuan</p>
+  <!-- SIMPLE HERO / HEADER -->
+  <header class="hero hero-stay">
+    <div class="hero-inner">
+      <h1>Places to Stay</h1>
+      <p>Comfortable stays around Guiuan &amp; Eastern Samar</p>
 
-    <a href="index.html#destinations" class="btn btn-secondary">
-      Back to Destinations
-    </a>
-  </div>
-</header>
+      <div class="hero-buttons">
+        <a href="index.html#destinations" class="btn">Back to Destinations</a>
+      </div>
+    </div>
+  </header>
 
   <!-- CONTENT -->
- <section class="section light">
-  <div class="section-inner">
-    <h2 class="section-title">Where You Can Stay</h2>
+  <section class="section light">
+    <div class="section-inner">
+      <h2 class="section-title">Where You Can Stay</h2>
 
-    <p class="plan-text">
-      Explore resorts, homestays, and guesthouses near Calicoan Island,
-      Guiuan town proper, and nearby beaches.
-    </p>
+      <p class="plan-text">
+        Explore resorts, homestays, and guesthouses near Calicoan Island,
+        Guiuan town proper, and nearby beaches.
+      </p>
 
-    <!-- PLACES-TO-STAY CAROUSEL -->
-    <div class="stay-carousel">
-      <button class="stay-arrow stay-prev">‹</button>
-
-      <div class="stay-track">
+      <!-- Simple mobile-friendly carousel / slider -->
+      <div class="stay-carousel">
         <!-- Slide 1 -->
-        <article class="stay-slide active">
-          <div class="stay-info">
-            <h3>Grey Inn</h3>
-            <p>Beachfront rooms right by the surf break – perfect for sunrise sessions.</p>
-          </div>
-          <div class="GreyInn1"
-               style="background-image: url('images/stay-calicoan-surf-camp.jpg');">
+        <article class="stay-slide">
+          <div class="stay-slide-title">Surfside Villas – Calicoan</div>
+          <div class="stay-slide-image">
+            <img src="images/stay-surfside-1.jpg" alt="Surfside Villas near the waves of Calicoan">
           </div>
         </article>
 
         <!-- Slide 2 -->
         <article class="stay-slide">
-          <div class="stay-info">
-            <h3>Guiuan Bay Homestay</h3>
-            <p>Cozy local homestay near the town center, market, and seaside promenade.</p>
-          </div>
-          <div class="stay-photo"
-               style="background-image: url('images/stay-guiuan-bay-homestay.jpg');">
+          <div class="stay-slide-title">Beachfront Cabanas – Sulangan</div>
+          <div class="stay-slide-image">
+            <img src="images/stay-sulangan-1.jpg" alt="Cozy beachfront cabanas in Sulangan">
           </div>
         </article>
 
         <!-- Slide 3 -->
         <article class="stay-slide">
-          <div class="stay-info">
-            <h3>Island View Eco Resort</h3>
-            <p>Quiet hillside cottages with sweeping views of the ocean and palm trees.</p>
-          </div>
-          <div class="stay-photo"
-               style="background-image: url('images/stay-island-view-resort.jpg');">
+          <div class="stay-slide-title">Town Homestay – Guiuan</div>
+          <div class="stay-slide-image">
+            <img src="images/stay-town-1.jpg" alt="Homestay in Guiuan town proper">
           </div>
         </article>
       </div>
 
-      <button class="stay-arrow stay-next">›</button>
+      <p class="small-note">
+        Tip: swipe sideways on mobile to see more places.
+      </p>
     </div>
-    <!-- /PLACES-TO-STAY CAROUSEL -->
-  </div>
-</section>
+  </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>© Explore Guiuan</p>
+    <p>&copy; Explore Guiuan</p>
   </footer>
 
 </body>
 </html>
-
