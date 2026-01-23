@@ -2,73 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Places to Stay | Explore Guiuan</title>
-
-  <!-- Reuse your main stylesheet -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-  <!-- SIMPLE HERO / HEADER -->
-  <header class="hero hero-stay">
-    <div class="hero-inner">
-      <h1>Places to Stay</h1>
-      <p>Comfortable stays around Guiuan &amp; Eastern Samar</p>
+<header class="hero hero-stay">
+  <div class="hero-inner">
+    <h1>Places to Stay</h1>
+    <p>Handpicked stays around Guiuan & Eastern Samar</p>
 
-      <div class="hero-buttons">
-        <a href="index.html#destinations" class="btn">Back to Destinations</a>
-      </div>
+    <div class="hero-buttons">
+      <a href="index.html" class="btn">← Back to Destinations</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- CONTENT -->
-  <section class="section light">
-    <div class="section-inner">
-      <h2 class="section-title">Where You Can Stay</h2>
+<section class="section">
+  <h2 class="section-title">Browse Stays</h2>
 
-      <p class="plan-text">
-        Explore resorts, homestays, and guesthouses near Calicoan Island,
-        Guiuan town proper, and nearby beaches.
-      </p>
+  <!-- PINTEREST-STYLE GRID -->
+  <div class="stay-grid">
 
-      <!-- Simple mobile-friendly carousel / slider -->
-      <div class="stay-carousel">
-        <!-- Slide 1 -->
-        <article class="stay-slide">
-          <div class="stay-slide-title">Surfside Villas – Calicoan</div>
-          <div class="stay-slide-image">
-            <img src="images/stay-surfside-1.jpg" alt="Surfside Villas near the waves of Calicoan">
-          </div>
-        </article>
+    <a href="stay-calicoan-villa.html" class="stay-pin">
+      <img src="images/stays/calicoan-villa.jpg" alt="Calicoan Surf Villa">
+      <span class="stay-label">Calicoan Surf Villa</span>
+    </a>
 
-        <!-- Slide 2 -->
-        <article class="stay-slide">
-          <div class="stay-slide-title">Beachfront Cabanas – Sulangan</div>
-          <div class="stay-slide-image">
-            <img src="images/stay-sulangan-1.jpg" alt="Cozy beachfront cabanas in Sulangan">
-          </div>
-        </article>
+    <a href="stay-guiuan-inn.html" class="stay-pin">
+      <img src="images/stays/guiuan-inn.jpg" alt="Guiuan Town Inn">
+      <span class="stay-label">Guiuan Town Inn</span>
+    </a>
 
-        <!-- Slide 3 -->
-        <article class="stay-slide">
-          <div class="stay-slide-title">Town Homestay – Guiuan</div>
-          <div class="stay-slide-image">
-            <img src="images/stay-town-1.jpg" alt="Homestay in Guiuan town proper">
-          </div>
-        </article>
-      </div>
+    <a href="stay-sulangan-homestay.html" class="stay-pin">
+      <img src="images/stays/sulangan-homestay.jpg" alt="Sulangan Homestay">
+      <span class="stay-label">Sulangan Homestay</span>
+    </a>
 
-      <p class="small-note">
-        Tip: swipe sideways on mobile to see more places.
-      </p>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>&copy; Explore Guiuan</p>
-  </footer>
+<footer class="footer">
+  <p>© Explore Guiuan</p>
+</footer>
 
 </body>
 </html>
