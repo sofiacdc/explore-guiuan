@@ -71,7 +71,7 @@ body {
   
 .hero-stay {
   min-height: 55vh;
-  background-image: url("../images/stay-hero.jpg"); /* optional */
+  background-image: url("header.jpg"); /* optional */
 }
 
 /* CONTENT SECTIONS */
