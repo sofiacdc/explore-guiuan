@@ -614,3 +614,54 @@ body {
   }
 }
 
+/* ===== PINTEREST-STYLE STAY GRID ===== */
+
+.stay-grid {
+  column-count: 3;
+  column-gap: 1.25rem;
+  padding: 2rem 1.5rem;
+}
+
+.stay-pin {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1.25rem;
+  position: relative;
+  text-decoration: none;
+}
+
+.stay-pin img {
+  width: 100%;
+  border-radius: 1.25rem;
+  display: block;
+  filter: brightness(0.75);
+  transition: transform 0.3s ease;
+}
+
+.stay-pin:hover img {
+  transform: scale(1.03);
+}
+
+.stay-label {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  color: #fef9c3;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .stay-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .stay-grid {
+    column-count: 1;
+  }
+}
