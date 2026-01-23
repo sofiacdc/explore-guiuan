@@ -68,6 +68,10 @@ body {
   font-size: 1rem;
   margin-bottom: 1.5rem;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  
+.hero-stay {
+  min-height: 55vh;
+  background-image: url("../images/stay-hero.jpg"); /* optional */
 }
 
 /* CONTENT SECTIONS */
