@@ -12,34 +12,114 @@
 <header class="hero hero-stay">
   <div class="hero-inner">
     <h1>Calicoan Villa</h1>
-    <p>Beachfront stay near the best surf breaks</p>
+    <p>Beachfront villa near world class surf breaks</p>
     <div class="hero-buttons">
       <a href="places-to-stay.html" class="btn">← Back to Stays</a>
     </div>
   </div>
 </header>
 
-<section class="section-inner">
+<section class="section-inner stay-detail">
   <p>
-    Calicoan Villa offers direct access to world-class surf breaks, 
-    ocean views, and peaceful island vibes — perfect for surfers, couples, 
-    and small groups looking for a quiet escape.
+    Calicoan Villa offers a quiet beachfront escape with direct access to the ocean,
+    relaxing common areas, and a calm island atmosphere after a full day of surfing
+    or exploring.
   </p>
 
+  <div class="book-box">
+    <p class="book-title">Book Calicoan Villa</p>
+    <a href="https://www.booking.com/Share-14Kzm3u"
+       class="book-btn"
+       target="_blank"
+       rel="noopener">
+      View availability and rates on Booking.com
+    </a>
+    <p class="book-disclaimer">
+      Note: Explore Guiuan is not connected with Booking.com or Calicoan Villa.
+      This link is only a suggestion to help you book a place to stay in a good
+      spot in the area. You will book and pay for your stay directly with the
+      provider. With Explore Guiuan, you book your <strong>itinerary and activities</strong>
+      around Guiuan and nearby destinations.
+    </p>
+  </div>
+
   <div class="stay-gallery">
-    <img src="images/stays/CalicoanVilla1.jpg">
-    <img src="images/stays/CalicoanVilla2.jpg">
-    <img src="images/stays/CalicoanVilla3.jpg">
-    <img src="images/stays/CalicoanVilla4.jpg">
-    <img src="images/stays/CalicoanVilla5.jpg">
-    <img src="images/stays/CalicoanVilla6.jpg">
-    <img src="images/stays/CalicoanVilla7.jpg">
-    <img src="images/stays/CalicoanVilla8.jpg">
-    <img src="images/stays/CalicoanVilla9.jpg">
-    <img src="images/stays/CalicoanVilla10.jpg">
-    <img src="images/stays/CalicoanVilla11.jpg">
+    <img src="images/stays/CalicoanVilla1.jpg" alt="Calicoan Villa photo 1">
+    <img src="images/stays/CalicoanVilla2.jpg" alt="Calicoan Villa photo 2">
+    <img src="images/stays/CalicoanVilla3.jpg" alt="Calicoan Villa photo 3">
+    <img src="images/stays/CalicoanVilla4.jpg" alt="Calicoan Villa photo 4">
+    <img src="images/stays/CalicoanVilla5.jpg" alt="Calicoan Villa photo 5">
+    <img src="images/stays/CalicoanVilla6.jpg" alt="Calicoan Villa photo 6">
+    <img src="images/stays/CalicoanVilla7.jpg" alt="Calicoan Villa photo 7">
+    <img src="images/stays/CalicoanVilla8.jpg" alt="Calicoan Villa photo 8">
+    <img src="images/stays/CalicoanVilla9.jpg" alt="Calicoan Villa photo 9">
+    <img src="images/stays/CalicoanVilla10.jpg" alt="Calicoan Villa photo 10">
+    <img src="images/stays/CalicoanVilla11.jpg" alt="Calicoan Villa photo 11">
   </div>
 </section>
+
+<div class="lightbox-backdrop" id="lightbox">
+  <div class="lightbox-inner">
+    <img src="" alt="Expanded stay photo" class="lightbox-image">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <button class="lightbox-prev" aria-label="Previous image">‹</button>
+    <button class="lightbox-next" aria-label="Next image">›</button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const galleryImages = Array.from(document.querySelectorAll(".stay-gallery img"));
+    const backdrop = document.getElementById("lightbox");
+    const lightboxImg = backdrop.querySelector(".lightbox-image");
+    const btnClose = backdrop.querySelector(".lightbox-close");
+    const btnPrev = backdrop.querySelector(".lightbox-prev");
+    const btnNext = backdrop.querySelector(".lightbox-next");
+
+    if (!galleryImages.length) return;
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      lightboxImg.src = galleryImages[currentIndex].src;
+      backdrop.classList.add("is-open");
+    }
+
+    function closeLightbox() {
+      backdrop.classList.remove("is-open");
+    }
+
+    function showRelative(step) {
+      currentIndex = (currentIndex + step + galleryImages.length) % galleryImages.length;
+      lightboxImg.src = galleryImages[currentIndex].src;
+    }
+
+    galleryImages.forEach(function (img, index) {
+      img.style.cursor = "pointer";
+      img.addEventListener("click", function () {
+        openLightbox(index);
+      });
+    });
+
+    btnClose.addEventListener("click", closeLightbox);
+    btnPrev.addEventListener("click", function () { showRelative(-1); });
+    btnNext.addEventListener("click", function () { showRelative(1); });
+
+    backdrop.addEventListener("click", function (event) {
+      if (event.target === backdrop) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (!backdrop.classList.contains("is-open")) return;
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowLeft") showRelative(-1);
+      if (event.key === "ArrowRight") showRelative(1);
+    });
+  });
+</script>
 
 <footer class="footer">
   <p>© Explore Guiuan</p>
