@@ -12,33 +12,113 @@
 <header class="hero hero-stay">
   <div class="hero-inner">
     <h1>Grey Inn Calicoan</h1>
-    <p>Cozy, quiet, and close to the waves</p>
+    <p>Cozy and simple stay close to the surf</p>
     <div class="hero-buttons">
       <a href="places-to-stay.html" class="btn">← Back to Stays</a>
     </div>
   </div>
 </header>
 
-<section class="section-inner">
+<section class="section-inner stay-detail">
   <p>
-    A simple and peaceful stay tucked near Calicoan’s surf spots. 
-    Ideal for travelers who want comfort after a long day of sun and waves.
+    Grey Inn Calicoan is a budget friendly and comfortable option for travelers who
+    want a clean place to rest after a full day of sun, sand, and waves.
   </p>
 
+  <div class="book-box">
+    <p class="book-title">Book Grey Inn Calicoan</p>
+    <a href="https://www.booking.com/Share-996R6M"
+       class="book-btn"
+       target="_blank"
+       rel="noopener">
+      View availability and rates on Booking.com
+    </a>
+    <p class="book-disclaimer">
+      Note: Explore Guiuan is not connected with Booking.com or Grey Inn Calicoan.
+      This link is only a suggestion to help you book a place to stay in a good
+      spot in the area. You will book and pay for your stay directly with the
+      provider. Explore Guiuan focuses on <strong>itineraries and activities</strong>
+      around Guiuan and nearby destinations.
+    </p>
+  </div>
+
   <div class="stay-gallery">
-    <img src="images/stays/GreyInnCali1.jpg">
-    <img src="images/stays/GreyInnCali2.jpg">
-    <img src="images/stays/GreyInnCali3.jpg">
-    <img src="images/stays/GreyInnCali4.jpg">
-    <img src="images/stays/GreyInnCali5.jpg">
-    <img src="images/stays/GreyInnCali6.jpg">
-    <img src="images/stays/GreyInnCali7.jpg">
-    <img src="images/stays/GreyInnCali8.jpg">
-    <img src="images/stays/GreyInnCali9.jpg">
-    <img src="images/stays/GreyInnCali10.jpg">
-    <img src="images/stays/GreyInnCali11.jpg">
+    <img src="images/stays/GreyInnCali1.jpg" alt="Grey Inn Calicoan photo 1">
+    <img src="images/stays/GreyInnCali2.jpg" alt="Grey Inn Calicoan photo 2">
+    <img src="images/stays/GreyInnCali3.jpg" alt="Grey Inn Calicoan photo 3">
+    <img src="images/stays/GreyInnCali4.jpg" alt="Grey Inn Calicoan photo 4">
+    <img src="images/stays/GreyInnCali5.jpg" alt="Grey Inn Calicoan photo 5">
+    <img src="images/stays/GreyInnCali6.jpg" alt="Grey Inn Calicoan photo 6">
+    <img src="images/stays/GreyInnCali7.jpg" alt="Grey Inn Calicoan photo 7">
+    <img src="images/stays/GreyInnCali8.jpg" alt="Grey Inn Calicoan photo 8">
+    <img src="images/stays/GreyInnCali9.jpg" alt="Grey Inn Calicoan photo 9">
+    <img src="images/stays/GreyInnCali10.jpg" alt="Grey Inn Calicoan photo 10">
+    <img src="images/stays/GreyInnCali11.jpg" alt="Grey Inn Calicoan photo 11">
   </div>
 </section>
+
+<div class="lightbox-backdrop" id="lightbox">
+  <div class="lightbox-inner">
+    <img src="" alt="Expanded stay photo" class="lightbox-image">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <button class="lightbox-prev" aria-label="Previous image">‹</button>
+    <button class="lightbox-next" aria-label="Next image">›</button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const galleryImages = Array.from(document.querySelectorAll(".stay-gallery img"));
+    const backdrop = document.getElementById("lightbox");
+    const lightboxImg = backdrop.querySelector(".lightbox-image");
+    const btnClose = backdrop.querySelector(".lightbox-close");
+    const btnPrev = backdrop.querySelector(".lightbox-prev");
+    const btnNext = backdrop.querySelector(".lightbox-next");
+
+    if (!galleryImages.length) return;
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      lightboxImg.src = galleryImages[currentIndex].src;
+      backdrop.classList.add("is-open");
+    }
+
+    function closeLightbox() {
+      backdrop.classList.remove("is-open");
+    }
+
+    function showRelative(step) {
+      currentIndex = (currentIndex + step + galleryImages.length) % galleryImages.length;
+      lightboxImg.src = galleryImages[currentIndex].src;
+    }
+
+    galleryImages.forEach(function (img, index) {
+      img.style.cursor = "pointer";
+      img.addEventListener("click", function () {
+        openLightbox(index);
+      });
+    });
+
+    btnClose.addEventListener("click", closeLightbox);
+    btnPrev.addEventListener("click", function () { showRelative(-1); });
+    btnNext.addEventListener("click", function () { showRelative(1); });
+
+    backdrop.addEventListener("click", function (event) {
+      if (event.target === backdrop) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (!backdrop.classList.contains("is-open")) return;
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowLeft") showRelative(-1);
+      if (event.key === "ArrowRight") showRelative(1);
+    });
+  });
+</script>
 
 <footer class="footer">
   <p>© Explore Guiuan</p>
@@ -46,4 +126,3 @@
 
 </body>
 </html>
-
