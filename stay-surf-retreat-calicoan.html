@@ -19,26 +19,107 @@
   </div>
 </header>
 
-<section class="section-inner">
+<section class="section-inner stay-detail">
   <p>
-    Surf Retreat Calicoan is a laid-back surf stay with quick access to
-    the breaks, native-inspired spaces, and breezy hangout spots.
-    Perfect for surfers, friends, and anyone who wants to stay close to the action.
+    Surf Retreat Calicoan is a laid-back surf stay with quick access to the
+    breaks, native-inspired spaces, and breezy hangout spots. Perfect for
+    surfers, friends, and anyone who wants to stay close to the action.
   </p>
 
+  <div class="book-box">
+    <p class="book-title">Book Surf Retreat Calicoan</p>
+    <a href="https://www.airbnb.com/rooms/1406435194294469715?check_in=2026-02-06&check_out=2026-02-07&guests=1&adults=1&s=67&unique_share_id=d4e7a041-6623-4a40-bf63-18419319f150"
+       class="book-btn"
+       target="_blank"
+       rel="noopener">
+      View availability and rates on Airbnb
+    </a>
+    <p class="book-disclaimer">
+      Note: Explore Guiuan is not connected with Airbnb or Surf Retreat Calicoan.
+      This link is only a suggestion for a good stay in the area. You will book
+      and pay for your accommodation directly with the provider. Explore Guiuan
+      focuses on <strong>itineraries and activities</strong> in and around Guiuan.
+    </p>
+  </div>
+
+  <!-- Pinterest-style gallery -->
   <div class="stay-gallery">
-    <img src="images/stays/surfretreat1.jpeg" alt="Surf Retreat Calicoan exterior">
-    <img src="images/stays/surfretreat2.jpeg" alt="Surf Retreat Calicoan room">
-    <img src="images/stays/surfretreat3.jpeg" alt="Surf Retreat Calicoan common area">
-    <img src="images/stays/surfretreat4.jpeg" alt="Surf Retreat Calicoan surroundings">
-    <img src="images/stays/surfretreat5.jpeg" alt="Surf Retreat Calicoan details">
-    <img src="images/stays/surfretreat6.jpeg" alt="Surf Retreat Calicoan path">
-    <img src="images/stays/surfretreat7.jpeg" alt="Surf Retreat Calicoan view">
-    <img src="images/stays/surfretreat8.jpeg" alt="Surf Retreat Calicoan outdoor area">
-    <img src="images/stays/surfretreat9.jpeg" alt="Surf Retreat Calicoan vibe">
-    <img src="images/stays/surfretreat10.jpeg" alt="Surf Retreat Calicoan sunset">
+    <img src="images/stays/surfretreat1.jpeg" alt="Surf Retreat Calicoan photo 1">
+    <img src="images/stays/surfretreat2.jpeg" alt="Surf Retreat Calicoan photo 2">
+    <img src="images/stays/surfretreat3.jpeg" alt="Surf Retreat Calicoan photo 3">
+    <img src="images/stays/surfretreat4.jpeg" alt="Surf Retreat Calicoan photo 4">
+    <img src="images/stays/surfretreat5.jpeg" alt="Surf Retreat Calicoan photo 5">
+    <img src="images/stays/surfretreat6.jpeg" alt="Surf Retreat Calicoan photo 6">
+    <img src="images/stays/surfretreat7.jpeg" alt="Surf Retreat Calicoan photo 7">
+    <img src="images/stays/surfretreat8.jpeg" alt="Surf Retreat Calicoan photo 8">
+    <img src="images/stays/surfretreat9.jpeg" alt="Surf Retreat Calicoan photo 9">
+    <img src="images/stays/surfretreat10.jpeg" alt="Surf Retreat Calicoan photo 10">
   </div>
 </section>
+
+<!-- Lightbox markup - same as La Luna page -->
+<div class="lightbox-backdrop" id="lightbox">
+  <div class="lightbox-inner">
+    <img src="" alt="Expanded stay photo" class="lightbox-image">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <button class="lightbox-prev" aria-label="Previous image">‹</button>
+    <button class="lightbox-next" aria-label="Next image">›</button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const galleryImages = Array.from(document.querySelectorAll(".stay-gallery img"));
+    const backdrop = document.getElementById("lightbox");
+    const lightboxImg = backdrop.querySelector(".lightbox-image");
+    const btnClose = backdrop.querySelector(".lightbox-close");
+    const btnPrev = backdrop.querySelector(".lightbox-prev");
+    const btnNext = backdrop.querySelector(".lightbox-next");
+
+    if (!galleryImages.length) return;
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      lightboxImg.src = galleryImages[currentIndex].src;
+      backdrop.classList.add("is-open");
+    }
+
+    function closeLightbox() {
+      backdrop.classList.remove("is-open");
+    }
+
+    function showRelative(step) {
+      currentIndex = (currentIndex + step + galleryImages.length) % galleryImages.length;
+      lightboxImg.src = galleryImages[currentIndex].src;
+    }
+
+    galleryImages.forEach(function (img, index) {
+      img.style.cursor = "pointer";
+      img.addEventListener("click", function () {
+        openLightbox(index);
+      });
+    });
+
+    btnClose.addEventListener("click", closeLightbox);
+    btnPrev.addEventListener("click", function () { showRelative(-1); });
+    btnNext.addEventListener("click", function () { showRelative(1); });
+
+    backdrop.addEventListener("click", function (event) {
+      if (event.target === backdrop) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (!backdrop.classList.contains("is-open")) return;
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowLeft") showRelative(-1);
+      if (event.key === "ArrowRight") showRelative(1);
+    });
+  });
+</script>
 
 <footer class="footer">
   <p>© Explore Guiuan</p>
@@ -46,4 +127,3 @@
 
 </body>
 </html>
-
