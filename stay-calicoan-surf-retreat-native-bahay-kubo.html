@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Calicoan Surf Retreat – Native Bahay Kubo | Explore Guiuan</title>
+  <title>Calicoan Surf Retreat Bahay Kubo | Explore Guiuan</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -11,30 +11,111 @@
 
 <header class="hero hero-stay">
   <div class="hero-inner">
-    <h1>Surf Retreat Bahay Kubo</h1>
-    <p>Rustic island living for surf lovers</p>
+    <h1>Calicoan Surf Retreat - Bahay Kubo</h1>
+    <p>Native style kubo for slow island and surf days</p>
     <div class="hero-buttons">
       <a href="places-to-stay.html" class="btn">← Back to Stays</a>
     </div>
   </div>
 </header>
 
-<section class="section-inner">
+<section class="section-inner stay-detail">
   <p>
-    Experience true island living in a native kubo just steps from the surf. 
-    Quiet, peaceful, and perfect for slow mornings and sunset sessions.
+    Calicoan Surf Retreat Bahay Kubo offers a rustic and cozy native style stay,
+    surrounded by trees and fresh air, just a short distance from the surf and
+    shoreline.
   </p>
 
+  <div class="book-box">
+    <p class="book-title">Book Calicoan Surf Retreat - Bahay Kubo</p>
+    <a href="https://www.airbnb.com/rooms/1329482664229436661?check_in=2026-02-06&check_out=2026-02-07&guests=1&adults=1&s=67&unique_share_id=b43d2b06-4443-401a-8c06-4b09f28e3a53"
+       class="book-btn"
+       target="_blank"
+       rel="noopener">
+      View availability and rates on Airbnb
+    </a>
+    <p class="book-disclaimer">
+      Note: Explore Guiuan is not connected with Airbnb or Calicoan Surf Retreat.
+      This link is only a suggestion to help you book a place to stay in a good
+      spot in the area. You will book and pay for your stay directly with the
+      provider. Explore Guiuan focuses on <strong>itineraries and activities</strong>
+      in and around Guiuan.
+    </p>
+  </div>
+
   <div class="stay-gallery">
-    <img src="images/stays/Calicoan Surf Retreat Native Bahay Kubo1.jpeg">
-    <img src="images/stays/Calicoan Surf Retreat Native Bahay Kubo2.jpeg">
-    <img src="images/stays/Calicoan Surf Retreat Native Bahay Kubo3.jpeg">
-    <img src="images/stays/Calicoan Surf Retreat Native Bahay Kubo4.jpeg">
-    <img src="images/stays/Calicoan Surf Retreat Native Bahay Kubo5.jpeg">
-    <img src="images/stays/Calicoan Surf Retreat Native Bahay Kubo6.jpeg">
-    <img src="images/stays/Calicoan Surf Retreat Native Bahay Kubo7.jpeg">
+    <img src="images/stays/Calicoan Surf Retreat Native Bahay Kubo1.jpeg" alt="Bahay Kubo photo 1">
+    <img src="images/stays/Calicoan Surf Retreat Native Bahay Kubo2.jpeg" alt="Bahay Kubo photo 2">
+    <img src="images/stays/Calicoan Surf Retreat Native Bahay Kubo3.jpeg" alt="Bahay Kubo photo 3">
+    <img src="images/stays/Calicoan Surf Retreat Native Bahay Kubo4.jpeg" alt="Bahay Kubo photo 4">
+    <img src="images/stays/Calicoan Surf Retreat Native Bahay Kubo5.jpeg" alt="Bahay Kubo photo 5">
+    <img src="images/stays/Calicoan Surf Retreat Native Bahay Kubo6.jpeg" alt="Bahay Kubo photo 6">
+    <img src="images/stays/Calicoan Surf Retreat Native Bahay Kubo7.jpeg" alt="Bahay Kubo photo 7">
   </div>
 </section>
+
+<div class="lightbox-backdrop" id="lightbox">
+  <div class="lightbox-inner">
+    <img src="" alt="Expanded stay photo" class="lightbox-image">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <button class="lightbox-prev" aria-label="Previous image">‹</button>
+    <button class="lightbox-next" aria-label="Next image">›</button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const galleryImages = Array.from(document.querySelectorAll(".stay-gallery img"));
+    const backdrop = document.getElementById("lightbox");
+    const lightboxImg = backdrop.querySelector(".lightbox-image");
+    const btnClose = backdrop.querySelector(".lightbox-close");
+    const btnPrev = backdrop.querySelector(".lightbox-prev");
+    const btnNext = backdrop.querySelector(".lightbox-next");
+
+    if (!galleryImages.length) return;
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      lightboxImg.src = galleryImages[currentIndex].src;
+      backdrop.classList.add("is-open");
+    }
+
+    function closeLightbox() {
+      backdrop.classList.remove("is-open");
+    }
+
+    function showRelative(step) {
+      currentIndex = (currentIndex + step + galleryImages.length) % galleryImages.length;
+      lightboxImg.src = galleryImages[currentIndex].src;
+    }
+
+    galleryImages.forEach(function (img, index) {
+      img.style.cursor = "pointer";
+      img.addEventListener("click", function () {
+        openLightbox(index);
+      });
+    });
+
+    btnClose.addEventListener("click", closeLightbox);
+    btnPrev.addEventListener("click", function () { showRelative(-1); });
+    btnNext.addEventListener("click", function () { showRelative(1); });
+
+    backdrop.addEventListener("click", function (event) {
+      if (event.target === backdrop) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (!backdrop.classList.contains("is-open")) return;
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowLeft") showRelative(-1);
+      if (event.key === "ArrowRight") showRelative(1);
+    });
+  });
+</script>
 
 <footer class="footer">
   <p>© Explore Guiuan</p>
@@ -42,4 +123,3 @@
 
 </body>
 </html>
-
