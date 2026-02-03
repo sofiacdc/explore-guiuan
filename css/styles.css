@@ -1,11 +1,15 @@
-/* RESET */
+/* ==========================
+   RESET
+   ========================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* COLOR PALETTE */
+/* ==========================
+   COLOR PALETTE
+   ========================== */
 :root {
   --ocean-green: #14b8a6;
   --ocean-green-light: #5eead4;
@@ -14,7 +18,9 @@
   --text-dark: #083344;
 }
 
-/* BASE */
+/* ==========================
+   BASE
+   ========================== */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: linear-gradient(
@@ -27,15 +33,15 @@ body {
   line-height: 1.6;
 }
 
-/* HERO – PURE PHOTO, NO OVERLAY */
+/* ==========================
+   HERO
+   ========================== */
 .hero {
   min-height: 80vh;
-  background-image: url("../calicoan-hero.jpg"); /* from css/ to project root */
+  background-image: url("../calicoan-hero.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  position: relative;
 
   display: flex;
   align-items: center;
@@ -46,15 +52,12 @@ body {
   padding: 4rem 1.5rem 6rem;
 }
 
-/* Stacked buttons under the hero text */
-.hero-buttons {
-  display: flex;
-  flex-direction: column;    /* stacks buttons vertically */
-  align-items: center;
-  gap: 1rem;                 /* space between buttons */
-  margin-top: 1.5rem;        /* space from text above */
+.hero-stay {
+  min-height: 55vh;
+  background-image: url("../header.png");
 }
 
+/* Hero text */
 .hero-inner h1 {
   font-size: 2.4rem;
   margin-bottom: 0.75rem;
@@ -63,19 +66,14 @@ body {
 
 .hero-inner p {
   font-size: 1rem;
-  margin-bottom: 1.5rem;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-/* Optional different hero for Places to Stay page */
-.hero-stay {
-  min-height: 55vh;
-  background-image: url("../header.jpg"); /* change or remove if you want */
-  background-size: cover;
-  background-position: center;
+/* Buttons */
+.hero-buttons {
+  margin-top: 1.5rem;
 }
 
-/* BUTTON */
 .btn {
   display: inline-block;
   padding: 0.75rem 1.75rem;
@@ -87,89 +85,33 @@ body {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Secondary button (Places to Stay) */
-.btn-secondary {
-  margin-top: 1rem;
-  background: transparent;
-  color: #ffffff;
-  border: 2px solid #ffffff;
-}
-
-.btn-secondary:hover {
-  background: #ffffff;
-  color: var(--ocean-deep);
-}
-
-/* Outline button (for Discover Destinations) */
-.btn-outline {
-  background: transparent;
-  color: #ffffff;
-  border: 2px solid #ffffff;
-}
-
-.btn-outline:hover {
-  background: #ffffff;
-  color: var(--ocean-deep);
-}
-
 .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* CONTENT SECTIONS */
+/* ==========================
+   SECTIONS
+   ========================== */
 .section {
   padding: 4rem 1.5rem;
 }
 
-/* Center section headings */
-.section h2 {
+.section-title {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   color: var(--ocean-deep);
 }
 
-/* Destination cards layout */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.75rem;
-  margin-top: 2.5rem;
+.section-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.card {
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 1.25rem;
-  border: 1px solid transparent;
-  box-shadow: 0 20px 40px rgba(20, 184, 166, 0.2);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
-  text-decoration: none;
-  color: inherit;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(20, 184, 166, 0.35);
-  box-shadow:
-    0 18px 40px rgba(20, 184, 166, 0.25),
-    0 0 0 1px rgba(20, 184, 166, 0.15);
-}
-
-.card h3 {
-  color: var(--ocean-deep);
-  margin-bottom: 0.5rem;
-}
-
-.card p {
-  color: var(--text-dark);
-  text-decoration: none;
-}
-
-/* FOOTER */
+/* ==========================
+   FOOTER
+   ========================== */
 .footer {
   background: linear-gradient(
     135deg,
@@ -183,523 +125,9 @@ body {
   font-size: 0.9rem;
 }
 
-/* MOBILE */
-/* ========= RESPONSIVE LAYOUT ========= */
-
-/* Tablets & small laptops */
-@media (max-width: 900px) {
-
-  /* HERO */
-  .hero {
-    min-height: 70vh;
-    padding: 3rem 1.5rem 4rem;
-  }
-
-  .hero-inner h1 {
-    font-size: 2.1rem;
-  }
-
-  .hero-inner p {
-    font-size: 1rem;
-  }
-
-  /* Welcome float text */
-  .welcome-float {
-    max-width: 100%;
-    padding: 0 1.25rem;
-  }
-
-  /* Sections */
-  .section {
-    padding: 3.5rem 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .section-inner {
-    max-width: 100%;
-  }
-
-  /* Cards – 2-column grid on tablets */
-  .cards {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.25rem;
-    margin-top: 2rem;
-  }
-
-  .card {
-    padding: 1.5rem;
-  }
-
-  /* Detail sections (videos) */
-  .detail-section {
-    margin: 3rem 1.5rem 4rem;
-    padding: 1.5rem 1rem;
-  }
-
-  .detail-section video {
-    max-width: 100%;
-  }
-
-  /* Plan your trip text */
-  .plan-text {
-    max-width: 90%;
-    font-size: 1rem;
-  }
-
-  /* Footer */
-  .footer {
-    padding: 1.75rem 1.25rem;
-  }
-}
-
-/* Phones */
-@media (max-width: 600px) {
-
-  /* HERO – smaller and tighter on phones */
-  .hero {
-    min-height: 65vh;
-    padding: 2.5rem 1.25rem 3.25rem;
-  }
-
-  .hero-inner h1 {
-    font-size: 1.9rem;
-  }
-
-  .hero-inner p {
-    font-size: 0.95rem;
-  }
-
-  /* Stack buttons vertically & make them easy to tap */
-  .hero-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    align-items: stretch;
-    margin-top: 1.25rem;
-  }
-
-  .hero-buttons .btn {
-    width: 100%;
-  }
-
-  /* Welcome float */
-  .welcome-float {
-    bottom: 2rem;
-    padding: 0 1.25rem;
-  }
-
-  .welcome-float h2 {
-    font-size: 1.4rem;
-  }
-
-  .welcome-float p {
-    font-size: 0.9rem;
-  }
-
-  /* Sections */
-  .section {
-    padding: 3rem 1.25rem;
-    margin-top: 1.75rem;
-  }
-
-  .section-title {
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-  }
-
-  /* Cards – single column on phone */
-  .cards {
-    grid-template-columns: 1fr;
-    gap: 1.1rem;
-    margin-top: 1.5rem;
-    margin-bottom: 3.5rem;
-  }
-
-  .card {
-    padding: 1.4rem 1.25rem;
-    border-radius: 1rem;
-  }
-
-  .card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.4rem;
-  }
-
-  .card p {
-    font-size: 0.95rem;
-  }
-
-  /* Detail sections + videos */
-  .detail-section {
-    margin: 2.5rem 1.1rem 3.5rem;
-    padding: 1.5rem 1rem;
-  }
-
-  .detail-section h2 {
-    font-size: 1.35rem;
-  }
-
-  .detail-section video {
-    border-radius: 0.8rem;
-  }
-
-  /* Plan your trip */
-  .plan-text {
-    max-width: 100%;
-    margin: 0 auto 1.75rem;
-    font-size: 0.98rem;
-  }
-
-  .email {
-    font-size: 0.95rem;
-  }
-
-  /* Footer */
-  .footer {
-    margin-top: 3rem;
-    padding: 1.5rem 1.25rem;
-    font-size: 0.85rem;
-  }
-}  /* <-- closes the @media */
-
-/* Floating Welcome text over the hero image – no background */
-.welcome-float {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 900px;
-  text-align: center;
-  padding: 0 1.5rem;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
-}
-
-.welcome-float h2 {
-  margin-bottom: 0.75rem;
-  color: #ffffff;
-  font-size: 1.8rem;
-  font-weight: 700;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
-}
-
-.welcome-float p {
-  color: #f9fafb;
-  font-weight: 500;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
-}
-
-/* ----- SECTION SPACING ----- */
-
-/* Space above and below section titles like "Top Destinations" */
-.section-title {
-  margin-top: 4rem;
-  margin-bottom: 3rem;
-}
-
-/* Extra gap under the cards grid before the next section */
-.section .cards {
-  margin-bottom: 6.5rem;   /* was 5rem */
-}
-
-/* Extra gap before the "Plan Your Trip" section */
-#plan-trip {
-  margin-top: 0;           /* let the h2 handle spacing */
-}
-/* Make the Plan Your Trip heading sit closer to its text */
-#plan-trip h2 {
-  margin-top: 0;
-  margin-bottom: 1rem;   /* smaller than the default */
-  text-align: center;
-}
-
-#plan-trip p {
-  text-align: center;
-}
-/* PLAN YOUR TRIP SPACING & ALIGNMENT */
-#plan-trip {
-  text-align: center;
-  padding: 6rem 1.5rem 7rem;
-}
-
-#plan-trip .section-title {
-  margin-bottom: 2rem;
-}
-
-.plan-text {
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #355f5b;
-}
-
-.email {
-  margin-top: 1.5rem;
-  font-size: 1rem;
-}
-
-.email strong {
-  color: var(--ocean-deep);
-}
-
-/* ==========================
-   CENTERED SECTION WRAPPER
-   ========================== */
-
-.section-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-}
-  
-/* Destination detail sections - hidden until a card is clicked */
-.detail-section {
-  display: none;            /* HIDE by default */
-  max-width: 1000px;
-  margin: 4rem auto 6rem;
-  padding: 2rem 1.5rem;
-  text-align: center;
-}
-
-.detail-section h2 {
-  margin-bottom: 1.5rem;
-  color: var(--ocean-deep);
-}
-
-/* Only the active one is visible */
-.detail-section.active {
-  display: block;
-}
-
-/* Video styling */
-.detail-section video {
-  width: 100%;
-  max-width: 800px;
-  margin: 2rem auto;
-  border-radius: 1rem;
-}
-
 /* ================================
-   PLACES TO STAY – PINTEREST STYLE
+   PLACES TO STAY – PINTEREST GRID
    ================================ */
-
-.stay-grid {
-  column-count: 3;
-  column-gap: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 1rem;
-}
-
-.stay-pin {
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 1.5rem;
-  position: relative;
-  border-radius: 1rem;
-  overflow: hidden;
-  text-decoration: none;
-  break-inside: avoid;
-}
-
-.stay-pin img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 1rem;
-}
-
-/* Overlay content */
-.stay-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.1)
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.stay-pin:hover .stay-overlay {
-  opacity: 1;
-}
-
-.stay-overlay h3 {
-  color: #ffffff;
-  font-size: 1.05rem;
-  margin-bottom: 0.35rem;
-}
-
-.stay-overlay p {
-  color: #f1f5f9;
-  font-size: 0.85rem;
-  line-height: 1.4;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .stay-grid {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 500px) {
-  .stay-grid {
-    column-count: 1;
-  }
-}
-
-/* ==========================
-   STAY DETAIL GALLERY (PINTEREST STYLE)
-   ========================== */
-
-.stay-gallery {
-  column-count: 3;
-  column-gap: 1.25rem;
-  max-width: 1200px;
-  margin: 2rem auto 4rem;
-  padding: 0 1rem;
-}
-
-.stay-gallery img {
-  width: 100%;
-  border-radius: 14px;
-  margin-bottom: 1.25rem;
-  display: block;
-  break-inside: avoid;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .stay-gallery {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 600px) {
-  .stay-gallery {
-    column-count: 1;
-  }
-}
-
-/* ================================
-   PLACES TO STAY – MAIN GRID
-   ================================ */
-
-.stay-grid {
-  column-count: 3;
-  column-gap: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 1rem;
-}
-
-.stay-pin {
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 1.5rem;
-  position: relative;
-  border-radius: 1rem;
-  overflow: hidden;
-  text-decoration: none;
-  break-inside: avoid;
-}
-
-.stay-pin img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 1rem;
-}
-
-/* Overlay with name and description */
-.stay-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.1)
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.stay-pin:hover .stay-overlay {
-  opacity: 1;
-}
-
-.stay-overlay h3 {
-  color: #ffffff;
-  font-size: 1.05rem;
-  margin-bottom: 0.35rem;
-}
-
-.stay-overlay p {
-  color: #f1f5f9;
-  font-size: 0.85rem;
-  line-height: 1.4;
-}
-
-/* Responsive for main grid */
-@media (max-width: 900px) {
-  .stay-grid {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 500px) {
-  .stay-grid {
-    column-count: 1;
-  }
-}
-
-/* ================================
-   STAY DETAIL GALLERY – PINTEREST
-   ================================ */
-
-.stay-gallery {
-  column-count: 3;
-  column-gap: 1.25rem;
-  max-width: 1200px;
-  margin: 2rem auto 4rem;
-  padding: 0 1rem;
-}
-
-.stay-gallery img {
-  width: 100%;
-  border-radius: 14px;
-  margin-bottom: 1.25rem;
-  display: block;
-  break-inside: avoid;
-}
-
-/* Responsive for galleries */
-@media (max-width: 900px) {
-  .stay-gallery {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 600px) {
-  .stay-gallery {
-    column-count: 1;
-  }
-}
-/* ===== PLACES TO STAY GRID (POLISHED) ===== */
-
 .stay-grid {
   column-count: 3;
   column-gap: 1.5rem;
@@ -724,7 +152,7 @@ body {
   width: 100%;
   display: block;
   border-radius: 1rem;
-  filter: brightness(0.85);
+  filter: brightness(0.9);
   transition: transform 0.35s ease, filter 0.35s ease;
 }
 
@@ -733,7 +161,7 @@ body {
   filter: brightness(0.65);
 }
 
-/* Overlay label (title + short description) */
+/* Overlay */
 .stay-overlay {
   position: absolute;
   inset: 0;
@@ -761,15 +189,73 @@ body {
   opacity: 0.9;
 }
 
-/* Responsive */
+/* ================================
+   STAY DETAIL – BOOKING BOX
+   ================================ */
+.book-box {
+  margin: 2.5rem auto;
+  max-width: 700px;
+  text-align: center;
+}
+
+.book-box a {
+  display: inline-block;
+  margin: 0.5rem 0 1rem;
+  font-weight: 600;
+  color: var(--ocean-deep);
+  text-decoration: underline;
+}
+
+.disclaimer {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* ================================
+   STAY DETAIL – PINTEREST GALLERY
+   ================================ */
+.stay-gallery {
+  column-count: 3;
+  column-gap: 1.25rem;
+  max-width: 1200px;
+  margin: 2rem auto 4rem;
+  padding: 0 1rem;
+}
+
+.stay-gallery img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 1.25rem;
+  display: block;
+  break-inside: avoid;
+}
+
+/* ==========================
+   RESPONSIVE
+   ========================== */
 @media (max-width: 900px) {
-  .stay-grid {
+  .stay-grid,
+  .stay-gallery {
     column-count: 2;
+  }
+
+  .hero-inner h1 {
+    font-size: 2rem;
   }
 }
 
-@media (max-width: 500px) {
-  .stay-grid {
+@media (max-width: 600px) {
+  .stay-grid,
+  .stay-gallery {
     column-count: 1;
+  }
+
+  .hero {
+    min-height: 65vh;
+  }
+
+  .hero-inner h1 {
+    font-size: 1.7rem;
   }
 }
