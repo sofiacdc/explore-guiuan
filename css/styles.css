@@ -590,3 +590,111 @@ body {
   }
 }
 
+/* ================================
+   PLACES TO STAY – MAIN GRID
+   ================================ */
+
+.stay-grid {
+  column-count: 3;
+  column-gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+.stay-pin {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  text-decoration: none;
+  break-inside: avoid;
+}
+
+.stay-pin img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1rem;
+}
+
+/* Overlay with name and description */
+.stay-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.1)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.stay-pin:hover .stay-overlay {
+  opacity: 1;
+}
+
+.stay-overlay h3 {
+  color: #ffffff;
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+}
+
+.stay-overlay p {
+  color: #f1f5f9;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Responsive for main grid */
+@media (max-width: 900px) {
+  .stay-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .stay-grid {
+    column-count: 1;
+  }
+}
+
+/* ================================
+   STAY DETAIL GALLERY – PINTEREST
+   ================================ */
+
+.stay-gallery {
+  column-count: 3;
+  column-gap: 1.25rem;
+  max-width: 1200px;
+  margin: 2rem auto 4rem;
+  padding: 0 1rem;
+}
+
+.stay-gallery img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 1.25rem;
+  display: block;
+  break-inside: avoid;
+}
+
+/* Responsive for galleries */
+@media (max-width: 900px) {
+  .stay-gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .stay-gallery {
+    column-count: 1;
+  }
+}
