@@ -19,26 +19,109 @@
   </div>
 </header>
 
-<section class="section-inner">
+<section class="section-inner stay-detail">
   <p>
-    La Luna Resort offers relaxed beachfront living with soft waves, open skies,
-    and peaceful island nights. A great choice for couples, families, and friends
+    La Luna Resort offers relaxed beachfront living with soft waves, wide skies,
+    and peaceful island nights. A sweet spot for couples, families, and friends
     who want to wake up right by the sea.
   </p>
 
+  <div class="book-box">
+    <p class="book-title">Book La Luna Resort</p>
+    <a href="https://www.airbnb.com/rooms/22637045?check_in=2026-02-06&check_out=2026-02-07&guests=1&adults=1&s=67&unique_share_id=35493be6-eef7-458c-b055-bfab57c53986"
+       class="book-btn"
+       target="_blank"
+       rel="noopener">
+      View availability and rates on Airbnb
+    </a>
+    <p class="book-disclaimer">
+      Note: Explore Guiuan is not connected with Airbnb or La Luna Resort.
+      This link is only a suggestion to help you book a place to stay in a good
+      spot in the area. You will book and pay for your stay directly with the
+      provider. With Explore Guiuan, you book your <strong>itinerary and activities</strong>
+      around Guiuan and nearby destinations.
+    </p>
+  </div>
+
+  <!-- Pinterest-style gallery -->
   <div class="stay-gallery">
-    <img src="images/stays/la luna1.jpeg" alt="La Luna Resort view">
-    <img src="images/stays/la luna2.jpeg" alt="La Luna Resort room">
-    <img src="images/stays/la luna3.jpg" alt="La Luna Resort interior">
-    <img src="images/stays/la luna4.jpg" alt="La Luna Resort exterior">
-    <img src="images/stays/la luna5.jpeg" alt="La Luna Resort common area">
-    <img src="images/stays/la luna6.jpg" alt="La Luna Resort beach">
-    <img src="images/stays/la luna7.jpeg" alt="La Luna Resort details">
-    <img src="images/stays/la luna8.jpeg" alt="La Luna Resort area">
-    <img src="images/stays/la luna9.jpeg" alt="La Luna Resort sunset">
-    <img src="images/stays/la luna10.jpeg" alt="La Luna Resort night view">
+    <img src="images/stays/la luna1.jpeg" alt="La Luna Resort photo 1">
+    <img src="images/stays/la luna2.jpeg" alt="La Luna Resort photo 2">
+    <img src="images/stays/la luna3.jpg" alt="La Luna Resort photo 3">
+    <img src="images/stays/la luna4.jpg" alt="La Luna Resort photo 4">
+    <img src="images/stays/la luna5.jpeg" alt="La Luna Resort photo 5">
+    <img src="images/stays/la luna6.jpg" alt="La Luna Resort photo 6">
+    <img src="images/stays/la luna7.jpeg" alt="La Luna Resort photo 7">
+    <img src="images/stays/la luna8.jpeg" alt="La Luna Resort photo 8">
+    <img src="images/stays/la luna9.jpeg" alt="La Luna Resort photo 9">
+    <img src="images/stays/la luna10.jpeg" alt="La Luna Resort photo 10">
   </div>
 </section>
+
+<!-- Lightbox markup - reuse on every stay page -->
+<div class="lightbox-backdrop" id="lightbox">
+  <div class="lightbox-inner">
+    <img src="" alt="Expanded stay photo" class="lightbox-image">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <button class="lightbox-prev" aria-label="Previous image">‹</button>
+    <button class="lightbox-next" aria-label="Next image">›</button>
+  </div>
+</div>
+
+<script>
+  // Simple lightbox for all .stay-gallery images on this page
+  document.addEventListener("DOMContentLoaded", function () {
+    const galleryImages = Array.from(document.querySelectorAll(".stay-gallery img"));
+    const backdrop = document.getElementById("lightbox");
+    const lightboxImg = backdrop.querySelector(".lightbox-image");
+    const btnClose = backdrop.querySelector(".lightbox-close");
+    const btnPrev = backdrop.querySelector(".lightbox-prev");
+    const btnNext = backdrop.querySelector(".lightbox-next");
+
+    if (!galleryImages.length) return;
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      lightboxImg.src = galleryImages[currentIndex].src;
+      backdrop.classList.add("is-open");
+    }
+
+    function closeLightbox() {
+      backdrop.classList.remove("is-open");
+    }
+
+    function showRelative(step) {
+      currentIndex = (currentIndex + step + galleryImages.length) % galleryImages.length;
+      lightboxImg.src = galleryImages[currentIndex].src;
+    }
+
+    galleryImages.forEach(function (img, index) {
+      img.style.cursor = "pointer";
+      img.addEventListener("click", function () {
+        openLightbox(index);
+      });
+    });
+
+    btnClose.addEventListener("click", closeLightbox);
+    btnPrev.addEventListener("click", function () { showRelative(-1); });
+    btnNext.addEventListener("click", function () { showRelative(1); });
+
+    backdrop.addEventListener("click", function (event) {
+      if (event.target === backdrop) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (!backdrop.classList.contains("is-open")) return;
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowLeft") showRelative(-1);
+      if (event.key === "ArrowRight") showRelative(1);
+    });
+  });
+</script>
 
 <footer class="footer">
   <p>© Explore Guiuan</p>
@@ -46,4 +129,3 @@
 
 </body>
 </html>
-
