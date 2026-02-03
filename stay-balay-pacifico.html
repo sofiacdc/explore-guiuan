@@ -12,31 +12,112 @@
 <header class="hero hero-stay">
   <div class="hero-inner">
     <h1>Balay Pacifico</h1>
-    <p>Warm island charm with ocean breeze mornings</p>
+    <p>Homey island stay with an ocean breeze</p>
     <div class="hero-buttons">
       <a href="places-to-stay.html" class="btn">← Back to Stays</a>
     </div>
   </div>
 </header>
 
-<section class="section-inner">
+<section class="section-inner stay-detail">
   <p>
-    Balay Pacifico brings a homey island feel with stunning ocean views. 
-    A favorite for families and travelers who want comfort and style.
+    Balay Pacifico blends a relaxed island home feel with lovely ocean views.
+    A nice pick for families and groups who want a warm and inviting space
+    during their Guiuan stay.
   </p>
 
+  <div class="book-box">
+    <p class="book-title">Book Balay Pacifico</p>
+    <a href="https://www.booking.com/Share-qMhmZkN"
+       class="book-btn"
+       target="_blank"
+       rel="noopener">
+      View availability and rates on Booking.com
+    </a>
+    <p class="book-disclaimer">
+      Note: Explore Guiuan is not connected with Booking.com or Balay Pacifico.
+      This link is only a suggestion to help you book a place to stay in a good
+      spot in the area. You will book and pay for your stay directly with the
+      provider. With Explore Guiuan, you book your <strong>itinerary and activities</strong>
+      around Guiuan and nearby destinations.
+    </p>
+  </div>
+
   <div class="stay-gallery">
-    <img src="images/stays/Balay Pacifico2.jpg">
-    <img src="images/stays/Balay Pacifico3.jpg">
-    <img src="images/stays/Balay Pacifico4.jpg">
-    <img src="images/stays/Balay Pacifico5.jpg">
-    <img src="images/stays/Balay Pacifico6.jpg">
-    <img src="images/stays/Balay Pacifico7.jpg">
-    <img src="images/stays/Balay Pacifico8.jpg">
-    <img src="images/stays/Balay Pacifico9.jpg">
-    <img src="images/stays/Balay Pacifico10.jpg">
+    <img src="images/stays/Balay Pacifico2.jpg" alt="Balay Pacifico photo 2">
+    <img src="images/stays/Balay Pacifico3.jpg" alt="Balay Pacifico photo 3">
+    <img src="images/stays/Balay Pacifico4.jpg" alt="Balay Pacifico photo 4">
+    <img src="images/stays/Balay Pacifico5.jpg" alt="Balay Pacifico photo 5">
+    <img src="images/stays/Balay Pacifico6.jpg" alt="Balay Pacifico photo 6">
+    <img src="images/stays/Balay Pacifico7.jpg" alt="Balay Pacifico photo 7">
+    <img src="images/stays/Balay Pacifico8.jpg" alt="Balay Pacifico photo 8">
+    <img src="images/stays/Balay Pacifico9.jpg" alt="Balay Pacifico photo 9">
+    <img src="images/stays/Balay Pacifico10.jpg" alt="Balay Pacifico photo 10">
   </div>
 </section>
+
+<div class="lightbox-backdrop" id="lightbox">
+  <div class="lightbox-inner">
+    <img src="" alt="Expanded stay photo" class="lightbox-image">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <button class="lightbox-prev" aria-label="Previous image">‹</button>
+    <button class="lightbox-next" aria-label="Next image">›</button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const galleryImages = Array.from(document.querySelectorAll(".stay-gallery img"));
+    const backdrop = document.getElementById("lightbox");
+    const lightboxImg = backdrop.querySelector(".lightbox-image");
+    const btnClose = backdrop.querySelector(".lightbox-close");
+    const btnPrev = backdrop.querySelector(".lightbox-prev");
+    const btnNext = backdrop.querySelector(".lightbox-next");
+
+    if (!galleryImages.length) return;
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      lightboxImg.src = galleryImages[currentIndex].src;
+      backdrop.classList.add("is-open");
+    }
+
+    function closeLightbox() {
+      backdrop.classList.remove("is-open");
+    }
+
+    function showRelative(step) {
+      currentIndex = (currentIndex + step + galleryImages.length) % galleryImages.length;
+      lightboxImg.src = galleryImages[currentIndex].src;
+    }
+
+    galleryImages.forEach(function (img, index) {
+      img.style.cursor = "pointer";
+      img.addEventListener("click", function () {
+        openLightbox(index);
+      });
+    });
+
+    btnClose.addEventListener("click", closeLightbox);
+    btnPrev.addEventListener("click", function () { showRelative(-1); });
+    btnNext.addEventListener("click", function () { showRelative(1); });
+
+    backdrop.addEventListener("click", function (event) {
+      if (event.target === backdrop) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (!backdrop.classList.contains("is-open")) return;
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowLeft") showRelative(-1);
+      if (event.key === "ArrowRight") showRelative(1);
+    });
+  });
+</script>
 
 <footer class="footer">
   <p>© Explore Guiuan</p>
@@ -44,4 +125,3 @@
 
 </body>
 </html>
-
