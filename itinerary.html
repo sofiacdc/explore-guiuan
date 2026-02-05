@@ -14,127 +14,117 @@
   <a href="itinerary.html" class="active">Itinerary</a>
 </nav>
 
-<section class="trip-selector">
-  <button class="selector-btn" id="openAdventure">
-    🧭 Adventure
+<!-- AIRBNB-STYLE SELECTOR BAR -->
+<section class="airbnb-selector">
+
+  <button class="selector-btn" data-panel="adventure">
+    <span class="icon">🎒</span>
+    <span class="label">Adventure</span>
   </button>
 
-  <button class="selector-btn" id="openDays">
-    🗓️ Days
+  <button class="selector-btn" data-panel="days">
+    <span class="icon">🗓️</span>
+    <span class="label">Days</span>
   </button>
 
-  <button class="selector-btn" id="openGuests">
-    👥 Guests
+  <button class="selector-btn" data-panel="guests">
+    <span class="icon">👥</span>
+    <span class="label">Guests</span>
   </button>
 
-  <div class="selector-summary" id="tripSummary">
-    Select your adventure
-  </div>
-</section> 
-  
-  <!-- LANGUAGE TOGGLE -->
-  <div class="builder-box">
-    <label>🌐 Language:</label>
-    <select id="language">
-      <option value="en">English</option>
-      <option value="fil">Filipino</option>
-    </select>
-  </div>
-
-  <!-- DAYS -->
-  <div class="builder-box">
-    <h3>🗓️ How many days?</h3>
-    <select id="days">
-      <option value="short">1–2 Days</option>
-      <option value="mid">3–4 Days</option>
-      <option value="long">5–7 Days</option>
-    </select>
-  </div>
-
-  <!-- PAX -->
-  <div class="builder-box">
-    <h3>👥 Number of travelers</h3>
-    <input type="number" id="pax" min="1" value="1">
-  </div>
-
-  <!-- DESTINATIONS -->
-  <div class="builder-box">
-    <h3>📍 Choose destinations</h3>
-
-    <label class="cluster rec-surf">
-      <input type="checkbox" data-min="600" data-max="1150">
-      🌊 Surf & Raw Pacific Coast
-      <span class="tag">Surfers · Scenic</span>
-    </label>
-
-    <label class="cluster rec-relax">
-      <input type="checkbox" data-min="450" data-max="750">
-      🏝️ Relaxed Beaches
-      <span class="tag">Families · Chill</span>
-    </label>
-
-    <label class="cluster rec-island">
-      <input type="checkbox" data-min="1050" data-max="1750">
-      🌊 Islands & Water Adventure
-      <span class="tag">Snorkeling</span>
-    </label>
-
-    <label class="cluster rec-culture">
-      <input type="checkbox" data-min="250" data-max="600">
-      ⛪ Heritage & Culture
-      <span class="tag">Slow travel</span>
-    </label>
-  </div>
-
-  <!-- FOOD -->
-  <div class="builder-box">
-    <h3>🍽️ Food preferences</h3>
-    <label>
-      <input type="checkbox" id="boodle" data-min="250" data-max="400">
-      Boodle fight / shared seaside meal
-    </label>
-  </div>
-
-  <!-- WEATHER -->
-  <div class="builder-box weather-tip" id="weatherTip">
-    ☀️ Best today: Calm beaches & heritage spots
-  </div>
-
-  <!-- BUDGET -->
-  <div class="builder-result">
-    <h3>💰 Estimated Budget</h3>
-    <p id="budget">Select options to calculate</p>
-  </div>
-
-  <div class="builder-actions">
-  <button onclick="copyItineraryLink()">🔗 Share itinerary</button>
-  <button onclick="downloadPDF()">📄 Download PDF</button>
-</div>
-
-  <!-- DISCLAIMER -->
-  <div class="builder-note">
-    <p>
-      <strong>Disclaimer:</strong> This is a free-flow itinerary.  
-      Times, costs, routes, and availability may change due to weather,
-      season, or personal pace. Guests may skip, repeat, or rearrange
-      destinations at any time.
-    </p>
-  </div>
 </section>
+
+<!-- SMALL NOTE -->
+<p class="freeflow-note">
+  <strong>Build Your Free-Flow Adventure.</strong>
+  Choose what feels right for you. Everything is optional.
+</p>
+
+<!-- PANELS -->
+<section class="selector-panels">
+
+  <!-- ADVENTURE PANEL -->
+  <div class="panel" id="panel-adventure">
+    <h3>Choose your adventures</h3>
+
+    <div class="panel-scroll">
+      <label class="option-card">
+        <input type="checkbox" value="A">
+        🟦 Surf & Raw Pacific Coast
+      </label>
+
+      <label class="option-card">
+        <input type="checkbox" value="B">
+        🟦 Relaxed Beaches & Easy Swims
+      </label>
+
+      <label class="option-card">
+        <input type="checkbox" value="C">
+        🟦 Islands, Caves & Water Adventure
+      </label>
+
+      <label class="option-card">
+        <input type="checkbox" value="D">
+        🟦 Heritage, Faith & Reflection
+      </label>
+    </div>
+  </div>
+
+  <!-- DAYS PANEL -->
+  <div class="panel" id="panel-days">
+    <h3>Select your days</h3>
+    <input type="date">
+    <input type="date">
+    <p class="hint">Flexible dates are okay.</p>
+  </div>
+
+  <!-- GUESTS PANEL -->
+  <div class="panel" id="panel-guests">
+    <h3>Guests</h3>
+
+    <div class="guest-row">
+      <span>Adults</span>
+      <input type="number" min="0" value="1">
+    </div>
+
+    <div class="guest-row">
+      <span>Children</span>
+      <input type="number" min="0" value="0">
+    </div>
+
+    <div class="guest-row">
+      <span>Infants</span>
+      <input type="number" min="0" value="0">
+    </div>
+
+    <div class="guest-row">
+      <span>Seniors / PWD</span>
+      <input type="number" min="0" value="0">
+    </div>
+  </div>
+
+</section>
+
+<!-- ITINERARY OUTPUT -->
+<section id="itinerary-output">
+  <h2>Your Itinerary Preview</h2>
+  <p class="placeholder">
+    Select an adventure to see details.
+  </p>
+</section>
+
+<!-- DISCLAIMER -->
+<p class="disclaimer">
+  This is a free-flow itinerary. You’re free to swap clusters, repeat favorites,
+  or skip stops depending on weather, energy, and interests.
+</p>
+
+<div class="booking-cta">
+  <h3>Ready to plan this trip?</h3>
+  <a href="mailto:exploreguiuan@gmail.com?subject=Itinerary Inquiry"
+     class="btn-primary">Send Inquiry</a>
+</div>
 
 <script src="js/itinerary.js"></script>
 </body>
 </html>
-
-<div class="booking-cta">
-  <h3>Ready to plan this trip?</h3>
-  <p>
-    Send us your itinerary and we’ll help you arrange transport,
-    guides, and stays.
-  </p>
-
-  <a href="mailto:exploreguiuan@gmail.com?subject=Itinerary Inquiry"
-     class="btn-primary">
-    📩 Send Inquiry
-  </a>
-</div>
