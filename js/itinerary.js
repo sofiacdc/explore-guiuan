@@ -55,3 +55,36 @@ document.querySelectorAll("input, select").forEach(el =>
   el.addEventListener("change", calculateBudget)
 );
 
+/* === Shareable Link === */
+function copyItineraryLink() {
+  const params = new URLSearchParams();
+
+  params.set("days", document.getElementById("days").value);
+  params.set("pax", document.getElementById("pax").value);
+  params.set("boodle", document.getElementById("boodle").checked ? 1 : 0);
+
+  document.querySelectorAll(".cluster input").forEach((c, i) => {
+    params.set("c" + i, c.checked ? 1 : 0);
+  });
+
+  const url = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+  navigator.clipboard.writeText(url);
+
+  alert("Itinerary link copied!");
+}
+
+/* Load from URL if present */
+(function loadFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  if (!params.has("days")) return;
+
+  document.getElementById("days").value = params.get("days");
+  document.getElementById("pax").value = params.get("pax");
+  document.getElementById("boodle").checked = params.get("boodle") === "1";
+
+  document.querySelectorAll(".cluster input").forEach((c, i) => {
+    c.checked = params.get("c" + i) === "1";
+  });
+
+  calculateBudget();
+})();
