@@ -3,128 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Build Your Adventure | Explore Guiuan</title>
+  <title>Itinerary | Explore Guiuan</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<nav class="main-nav">
-  <a href="index.html">Home</a>
-  <a href="places.html">Places to Stay</a>
-  <a href="itinerary.html" class="active">Itinerary</a>
-</nav>
+<!-- CENTERED ITINERARY BUTTONS -->
+<section class="itinerary-only">
+  <div class="itinerary-pill">
 
-<!-- AIRBNB-STYLE SELECTOR BAR -->
-<section class="airbnb-selector">
+    <button class="pill-btn">
+      <span class="pill-title">Adventure</span>
+      <span class="pill-sub">Choose experiences</span>
+    </button>
 
-  <button class="selector-btn" data-panel="adventure">
-    <span class="icon">🎒</span>
-    <span class="label">Adventure</span>
-  </button>
+    <div class="pill-divider"></div>
 
-  <button class="selector-btn" data-panel="days">
-    <span class="icon">🗓️</span>
-    <span class="label">Days</span>
-  </button>
+    <button class="pill-btn">
+      <span class="pill-title">Days</span>
+      <span class="pill-sub">Add dates</span>
+    </button>
 
-  <button class="selector-btn" data-panel="guests">
-    <span class="icon">👥</span>
-    <span class="label">Guests</span>
-  </button>
+    <div class="pill-divider"></div>
 
+    <button class="pill-btn">
+      <span class="pill-title">Guests</span>
+      <span class="pill-sub">Add guests</span>
+    </button>
+
+  </div>
 </section>
 
-<!-- SMALL NOTE -->
-<p class="freeflow-note">
-  <strong>Build Your Free-Flow Adventure.</strong>
+<!-- QUIET DISCLAIMER -->
+<p class="itinerary-disclaimer">
+  Build Your Free-Flow Adventure.  
   Choose what feels right for you. Everything is optional.
 </p>
 
-<!-- PANELS -->
-<section class="selector-panels">
-
-  <!-- ADVENTURE PANEL -->
-  <div class="panel" id="panel-adventure">
-    <h3>Choose your adventures</h3>
-
-    <div class="panel-scroll">
-      <label class="option-card">
-        <input type="checkbox" value="A">
-        🟦 Surf & Raw Pacific Coast
-      </label>
-
-      <label class="option-card">
-        <input type="checkbox" value="B">
-        🟦 Relaxed Beaches & Easy Swims
-      </label>
-
-      <label class="option-card">
-        <input type="checkbox" value="C">
-        🟦 Islands, Caves & Water Adventure
-      </label>
-
-      <label class="option-card">
-        <input type="checkbox" value="D">
-        🟦 Heritage, Faith & Reflection
-      </label>
-    </div>
-  </div>
-
-  <!-- DAYS PANEL -->
-  <div class="panel" id="panel-days">
-    <h3>Select your days</h3>
-    <input type="date">
-    <input type="date">
-    <p class="hint">Flexible dates are okay.</p>
-  </div>
-
-  <!-- GUESTS PANEL -->
-  <div class="panel" id="panel-guests">
-    <h3>Guests</h3>
-
-    <div class="guest-row">
-      <span>Adults</span>
-      <input type="number" min="0" value="1">
-    </div>
-
-    <div class="guest-row">
-      <span>Children</span>
-      <input type="number" min="0" value="0">
-    </div>
-
-    <div class="guest-row">
-      <span>Infants</span>
-      <input type="number" min="0" value="0">
-    </div>
-
-    <div class="guest-row">
-      <span>Seniors / PWD</span>
-      <input type="number" min="0" value="0">
-    </div>
-  </div>
-
-</section>
-
-<!-- ITINERARY OUTPUT -->
-<section id="itinerary-output">
-  <h2>Your Itinerary Preview</h2>
-  <p class="placeholder">
-    Select an adventure to see details.
-  </p>
-</section>
-
-<!-- DISCLAIMER -->
-<p class="disclaimer">
-  This is a free-flow itinerary. You’re free to swap clusters, repeat favorites,
-  or skip stops depending on weather, energy, and interests.
-</p>
-
-<div class="booking-cta">
-  <h3>Ready to plan this trip?</h3>
-  <a href="mailto:exploreguiuan@gmail.com?subject=Itinerary Inquiry"
-     class="btn-primary">Send Inquiry</a>
-</div>
-
-<script src="js/itinerary.js"></script>
 </body>
 </html>
