@@ -88,3 +88,31 @@ function copyItineraryLink() {
 
   calculateBudget();
 })();
+/* === PDF Export === */
+function downloadPDF() {
+  const content = `
+Explore Guiuan – Free-Flow Itinerary
+
+Days: ${document.getElementById("days").value}
+PAX: ${document.getElementById("pax").value}
+
+Destinations:
+${Array.from(document.querySelectorAll(".cluster input"))
+  .map((c, i) => c.checked ? `- Option ${i + 1}` : "")
+  .join("\n")}
+
+Boodle fight: ${document.getElementById("boodle").checked ? "Yes" : "No"}
+
+Estimated Budget:
+${document.getElementById("budget").innerText}
+
+Note: This itinerary is flexible and weather-dependent.
+`;
+
+  const blob = new Blob([content], { type: "application/pdf" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "Explore-Guiuan-Itinerary.pdf";
+  link.click();
+}
+
