@@ -713,3 +713,68 @@ body {
 .cluster-card input {
   margin-right: 0.5rem;
 }
+
+/* ITINERARY PAGE – CLEAN START */
+
+.itinerary-only {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itinerary-pill {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 999px;
+  padding: 0.6rem;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  max-width: 720px;
+  width: 90%;
+}
+
+.pill-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 999px;
+}
+
+.pill-btn:hover {
+  background: #f7f7f7;
+}
+
+.pill-title {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.pill-sub {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.pill-divider {
+  width: 1px;
+  height: 36px;
+  background: #e5e5e5;
+}
+
+/* DISCREET DISCLAIMER */
+
+.itinerary-disclaimer {
+  position: fixed;
+  bottom: 16px;
+  right: 20px;
+  font-size: 0.75rem;
+  color: #888;
+  max-width: 260px;
+  line-height: 1.4;
+}
+
