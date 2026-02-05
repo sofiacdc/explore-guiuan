@@ -1,1 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Build Your Adventure | Explore Guiuan</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="main-nav">
+  <a href="index.html">Home</a>
+  <a href="places.html">Places to Stay</a>
+  <a href="itinerary.html" class="active">Itinerary</a>
+</nav>
+
+<section class="itinerary-builder">
+  <h1>Build Your Free-Flow Adventure</h1>
+  <p class="builder-intro">
+    Choose what feels right for you. Everything is optional.
+  </p>
+
+  <!-- LANGUAGE TOGGLE -->
+  <div class="builder-box">
+    <label>🌐 Language:</label>
+    <select id="language">
+      <option value="en">English</option>
+      <option value="fil">Filipino</option>
+    </select>
+  </div>
+
+  <!-- DAYS -->
+  <div class="builder-box">
+    <h3>🗓️ How many days?</h3>
+    <select id="days">
+      <option value="short">1–2 Days</option>
+      <option value="mid">3–4 Days</option>
+      <option value="long">5–7 Days</option>
+    </select>
+  </div>
+
+  <!-- PAX -->
+  <div class="builder-box">
+    <h3>👥 Number of travelers</h3>
+    <input type="number" id="pax" min="1" value="1">
+  </div>
+
+  <!-- DESTINATIONS -->
+  <div class="builder-box">
+    <h3>📍 Choose destinations</h3>
+
+    <label class="cluster rec-surf">
+      <input type="checkbox" data-min="600" data-max="1150">
+      🌊 Surf & Raw Pacific Coast
+      <span class="tag">Surfers · Scenic</span>
+    </label>
+
+    <label class="cluster rec-relax">
+      <input type="checkbox" data-min="450" data-max="750">
+      🏝️ Relaxed Beaches
+      <span class="tag">Families · Chill</span>
+    </label>
+
+    <label class="cluster rec-island">
+      <input type="checkbox" data-min="1050" data-max="1750">
+      🌊 Islands & Water Adventure
+      <span class="tag">Snorkeling</span>
+    </label>
+
+    <label class="cluster rec-culture">
+      <input type="checkbox" data-min="250" data-max="600">
+      ⛪ Heritage & Culture
+      <span class="tag">Slow travel</span>
+    </label>
+  </div>
+
+  <!-- FOOD -->
+  <div class="builder-box">
+    <h3>🍽️ Food preferences</h3>
+    <label>
+      <input type="checkbox" id="boodle" data-min="250" data-max="400">
+      Boodle fight / shared seaside meal
+    </label>
+  </div>
+
+  <!-- WEATHER -->
+  <div class="builder-box weather-tip" id="weatherTip">
+    ☀️ Best today: Calm beaches & heritage spots
+  </div>
+
+  <!-- BUDGET -->
+  <div class="builder-result">
+    <h3>💰 Estimated Budget</h3>
+    <p id="budget">Select options to calculate</p>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="builder-note">
+    <p>
+      <strong>Disclaimer:</strong> This is a free-flow itinerary.  
+      Times, costs, routes, and availability may change due to weather,
+      season, or personal pace. Guests may skip, repeat, or rearrange
+      destinations at any time.
+    </p>
+  </div>
+</section>
+
+<script src="js/itinerary.js"></script>
+</body>
+</html>
 
