@@ -639,3 +639,26 @@ body {
   font-weight: bold;
   text-decoration: underline;
 }
+.builder-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.builder-actions button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: #0ea5e9;
+  color: #fff;
+}
+
+.booking-cta {
+  text-align: center;
+  background: #f8fafc;
+  padding: 2.5rem 1.5rem;
+  border-radius: 16px;
+  margin-top: 3rem;
+}
