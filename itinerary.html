@@ -1,44 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Itinerary | Explore Guiuan</title>
-  <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Itinerary | Explore Guiuan</title>
+<link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
-<!-- CENTERED ITINERARY BUTTONS -->
-<section class="itinerary-only">
-  <div class="itinerary-pill">
+<section class="itinerary-wrapper">
 
-    <button class="pill-btn">
-      <span class="pill-title">Adventure</span>
-      <span class="pill-sub">Choose experiences</span>
-    </button>
+  <!-- LEFT: SELECTORS -->
+  <div class="itinerary-only">
 
-    <div class="pill-divider"></div>
+    <!-- ADVENTURE -->
+    <div class="pill-container">
+      <button class="pill-btn" onclick="toggleDropdown('adventureDrop')">
+        <span class="pill-title">Adventure</span>
+        <span class="pill-sub" id="adventureSummary">Choose experiences</span>
+      </button>
 
-    <button class="pill-btn">
-      <span class="pill-title">Days</span>
-      <span class="pill-sub">Add dates</span>
-    </button>
+      <div class="dropdown" id="adventureDrop">
+        <label><input type="checkbox" value="1150" data-name="Surf & Raw Pacific Coast"> Surf & Raw Pacific Coast</label>
+        <label><input type="checkbox" value="750" data-name="Relaxed Beaches"> Relaxed Beaches & Easy Swims</label>
+        <label><input type="checkbox" value="1750" data-name="Islands & Water Adventure"> Islands, Caves & Water Adventure</label>
+        <label><input type="checkbox" value="600" data-name="Heritage & Faith"> Heritage, Faith & Reflection</label>
+      </div>
+    </div>
 
-    <div class="pill-divider"></div>
+    <!-- DAYS -->
+    <div class="pill-container">
+      <button class="pill-btn" onclick="toggleDropdown('daysDrop')">
+        <span class="pill-title">Days</span>
+        <span class="pill-sub" id="daysSummary">Add dates</span>
+      </button>
 
-    <button class="pill-btn">
-      <span class="pill-title">Guests</span>
-      <span class="pill-sub">Add guests</span>
-    </button>
+      <div class="dropdown calendar" id="daysDrop">
+        <input type="date" id="startDate">
+        <input type="date" id="endDate">
+      </div>
+    </div>
+
+    <!-- GUESTS -->
+    <div class="pill-container">
+      <button class="pill-btn" onclick="toggleDropdown('guestsDrop')">
+        <span class="pill-title">Guests</span>
+        <span class="pill-sub" id="guestSummary">Add guests</span>
+      </button>
+
+      <div class="dropdown" id="guestsDrop">
+
+        <div class="guest-row">
+          <span>Adults</span>
+          <div class="counter">
+            <button onclick="updateGuests('adults',-1)">−</button>
+            <span id="adults">1</span>
+            <button onclick="updateGuests('adults',1)">+</button>
+          </div>
+        </div>
+
+        <div class="guest-row">
+          <span>Children</span>
+          <div class="counter">
+            <button onclick="updateGuests('children',-1)">−</button>
+            <span id="children">0</span>
+            <button onclick="updateGuests('children',1)">+</button>
+          </div>
+        </div>
+
+        <div class="guest-row">
+          <span>Infant / Toddler</span>
+          <div class="counter">
+            <button onclick="updateGuests('infant',-1)">−</button>
+            <span id="infant">0</span>
+            <button onclick="updateGuests('infant',1)">+</button>
+          </div>
+        </div>
+
+        <div class="guest-row">
+          <span>Seniors / PWD</span>
+          <div class="counter">
+            <button onclick="updateGuests('pwd',-1)">−</button>
+            <span id="pwd">0</span>
+            <button onclick="updateGuests('pwd',1)">+</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
   </div>
+
+  <!-- RIGHT: PRICE -->
+  <div class="price-panel">
+    <h3>Estimated Cost</h3>
+    <p class="price" id="totalPrice">₱0</p>
+    <p class="price-note">Prices vary by season, weather, and availability.</p>
+  </div>
+
 </section>
 
-<!-- QUIET DISCLAIMER -->
 <p class="itinerary-disclaimer">
-  Build Your Free-Flow Adventure.  
-  Choose what feels right for you. Everything is optional.
+Build Your Free-Flow Adventure. Choose what feels right for you. Everything is optional.
 </p>
 
+<script src="js/itinerary.js"></script>
 </body>
 </html>
