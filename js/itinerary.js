@@ -39,3 +39,24 @@ function calculatePrice() {
 
   document.getElementById('totalPrice').innerText = '₱' + total.toLocaleString();
 }
+
+function updateNightCount() {
+  const start = document.getElementById("startDate").value;
+  const end = document.getElementById("endDate").value;
+
+  if (!start || !end) {
+    document.getElementById("nightCount").innerText = "";
+    return;
+  }
+
+  const startDate = new Date(start);
+  const endDate = new Date(end);
+  const diffTime = endDate - startDate;
+  const nights = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+  document.getElementById("nightCount").innerText =
+    nights > 0 ? `${nights} night${nights > 1 ? "s" : ""}` : "";
+}
+
+document.getElementById("startDate").addEventListener("change", updateNightCount);
+document.getElementById("endDate").addEventListener("change", updateNightCount);
