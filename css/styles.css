@@ -822,6 +822,25 @@ body {
   z-index: 10;
 }
 
+/* FIX CHECKBOX ALIGNMENT – Airbnb style */
+.dropdown label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 6px 0;
+
+  cursor: pointer;
+}
+
+.dropdown input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
 @keyframes softDrop {
   from {
     opacity: 0;
