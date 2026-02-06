@@ -12,6 +12,22 @@ let guests = {
   document.getElementById("endDate").setAttribute("min", today);
 })();
 
+function getSeasonMultiplier() {
+  const month = new Date().getMonth() + 1;
+
+  // Peak season: Dec–May
+  if (month === 12 || month <= 5) {
+    return 1.2;
+  }
+
+  // Rainy season: Jun–Oct
+  if (month >= 6 && month <= 10) {
+    return 1.1;
+  }
+
+  return 1;
+}
+
 function toggleDropdown(id) {
   document.querySelectorAll('.dropdown').forEach(d => {
     if (d.id !== id) d.style.display = 'none';
@@ -58,12 +74,14 @@ function calculatePrice() {
 
   const guestCount = Object.values(guests).reduce((a,b)=>a+b,0);
   const nights = getNights();
+  const seasonMultiplier = getSeasonMultiplier();
 
-  total = total * guestCount * nights;
+  total = total * guestCount * nights * seasonMultiplier;
 
   document.getElementById('totalPrice').innerText =
     total > 0 ? '₱' + total.toLocaleString() : '₱0';
 }
+
 
 // Night count display
 function updateNightCount() {
