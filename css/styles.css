@@ -833,6 +833,45 @@ body {
   cursor: pointer;
 }
 
+.dropdown {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  display: none;
+  min-width: 260px;
+  z-index: 10;
+}
+
+.dropdown {
+  animation: softDrop .18s ease-out;
+}
+
+.dropdown {
+  animation: softDrop .22s cubic-bezier(.22,.61,.36,1);
+}
+
+@keyframes softDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+
 /* === SOFT CALENDAR STYLES === */
 
 .calendar-soft {
