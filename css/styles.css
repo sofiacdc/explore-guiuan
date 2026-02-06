@@ -833,11 +833,43 @@ body {
   cursor: pointer;
 }
 
-.calendar input {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
+/* === SOFT CALENDAR STYLES === */
+
+.calendar-soft {
+  min-width: 280px;
 }
+
+.calendar-label {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 6px;
+  margin-top: 12px;
+}
+
+.soft-date {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #e6e6e6;
+  font-size: 14px;
+  background-color: #fafafa;
+  transition: all .2s ease;
+}
+
+.soft-date:focus {
+  outline: none;
+  border-color: #b9d6ff;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(185,214,255,.35);
+}
+
+.calendar-note {
+  font-size: 11px;
+  color: #888;
+  margin-top: 14px;
+  line-height: 1.4;
+}
+
 
 .guest-row {
   display: flex;
