@@ -917,13 +917,33 @@ body {
   margin-bottom: 12px;
 }
 
+/* =========================
+   GUEST COUNTER – SOFT UX
+   ========================= */
+
 .counter button {
+  background: #f2f2f2;
   border: none;
-  background: #eee;
   border-radius: 50%;
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
   cursor: pointer;
+  transition: all .15s ease;
+}
+
+.counter button:hover {
+  background: #e6e6e6;
+}
+
+.counter button:active {
+  transform: scale(.9);
+}
+
+.counter span {
+  min-width: 18px;
+  text-align: center;
+  font-weight: 500;
 }
 
 .price-panel {
