@@ -96,8 +96,9 @@ function updateDaysHint() {
 
   if (nights >= 3 && nights <= 4) {
     hint.innerText = "Most travelers choose 3–4 days";
+    hint.classList.add("show");
   } else {
-    hint.innerText = "";
+    hint.classList.remove("show");
   }
 }
 
