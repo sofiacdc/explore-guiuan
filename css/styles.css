@@ -967,3 +967,11 @@ body {
   font-size: 12px;
   color: #777;
 }
+
+.estimate-note {
+  font-size: 12px;
+  color: #777;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
