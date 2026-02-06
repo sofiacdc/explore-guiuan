@@ -14,52 +14,36 @@
   <!-- LEFT: SELECTORS -->
   <div class="itinerary-only">
 
-    <!-- ADVENTURE -->
-    <div class="pill-container">
-      <button class="pill-btn" onclick="toggleDropdown('adventureDrop')">
-        <span class="pill-title">Adventure</span>
-        <span class="pill-sub" id="adventureSummary">Choose experiences</span>
-      </button>
+<!-- ADVENTURE -->
+<div class="pill-container">
+  <button class="pill-btn" onclick="toggleDropdown('adventureDrop')">
+    <span class="pill-title">Adventure</span>
+    <span class="pill-sub" id="adventureSummary">Choose experiences</span>
+  </button>
 
-      <div id="adventureDrop" class="dropdown">
+  <div id="adventureDrop" class="dropdown">
+    <label>
+      <input type="checkbox" value="1200" data-cluster="surf">
+      Surf & Raw Pacific Coast (Calicoan Route)
+    </label>
 
-  <label>
-    <input
-      type="checkbox"
-      value="1200"
-      data-cluster="surf"
-    >
-    Surf & Raw Pacific Coast (Calicoan Route)
-  </label>
+    <label>
+      <input type="checkbox" value="800" data-cluster="relax">
+      Relaxed Beaches & Easy Swims
+    </label>
 
-  <label>
-    <input
-      type="checkbox"
-      value="800"
-      data-cluster="relax"
-    >
-    Relaxed Beaches & Easy Swims
-  </label>
+    <label>
+      <input type="checkbox" value="1500" data-cluster="island">
+      Islands, Caves & Water Adventure
+    </label>
 
-  <label>
-    <input
-      type="checkbox"
-      value="1500"
-      data-cluster="island"
-    >
-    Islands, Caves & Water Adventure
-  </label>
-
-  <label>
-    <input
-      type="checkbox"
-      value="500"
-      data-cluster="heritage"
-    >
-    Heritage, Faith & Reflection
-  </label>
-
+    <label>
+      <input type="checkbox" value="500" data-cluster="heritage">
+      Heritage, Faith & Reflection
+    </label>
+  </div>
 </div>
+
 
 
     <!-- DAYS -->
