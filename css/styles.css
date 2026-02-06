@@ -778,3 +778,95 @@ body {
   line-height: 1.4;
 }
 
+.itinerary-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 80px;
+  align-items: flex-start;
+}
+
+.itinerary-only {
+  display: flex;
+  gap: 16px;
+}
+
+.pill-container {
+  position: relative;
+}
+
+.pill-btn {
+  padding: 14px 20px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  min-width: 180px;
+}
+
+.pill-title {
+  display: block;
+  font-weight: 600;
+}
+
+.pill-sub {
+  font-size: 12px;
+  color: #777;
+}
+
+.dropdown {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  display: none;
+  min-width: 260px;
+  z-index: 10;
+}
+
+.dropdown label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.calendar input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.guest-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.counter button {
+  border: none;
+  background: #eee;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.price-panel {
+  min-width: 220px;
+  border-left: 1px solid #eee;
+  padding-left: 30px;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.price-note {
+  font-size: 12px;
+  color: #777;
+}
