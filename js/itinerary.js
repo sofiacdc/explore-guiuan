@@ -64,6 +64,89 @@ function getNights() {
   return Math.max(1, Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)));
 }
 
+const CLUSTERS = {
+  surf: {
+    title: "Surf & Raw Pacific Coast (Calicoan Route)",
+    theme: "Surf, scenery, raw Pacific views",
+    bestTime: "Morning to late afternoon",
+    food: "🟢 Boodle fight / shared seaside meal",
+
+    destinations: [
+      {
+        name: "Calicoan Island",
+        duration: "2–3 hours",
+        note: "Surf watching, beach walks, photos"
+      },
+      {
+        name: "ABCD Surf Beach",
+        duration: "1.5–2 hours",
+        note: "Surf sessions or viewing, relaxed vibe"
+      },
+      {
+        name: "Moroboro",
+        duration: "1–1.5 hours",
+        note: "Swimming, soft sand, rest stop"
+      },
+      {
+        name: "View Deck Calicoan",
+        duration: "30–45 minutes",
+        note: "Scenic lookout, quick stop for photos"
+      }
+    ],
+
+    foodExperience: {
+      title: "Boodle fight–style lunch",
+      note: "Best done after ABCD Surf Beach or Moroboro"
+    },
+
+    cost: [
+      "Transport (van/motorbike): ₱300 – ₱600",
+      "Beach/entrance fees: ₱50 – ₱150",
+      "Boodle fight meal (shared): ₱250 – ₱400"
+    ],
+
+    totalEstimate: "₱600 – ₱1,150",
+    websiteNote:
+      "Many travelers choose to stay overnight in Calicoan to enjoy sunset and sunrise without rushing."
+  },
+
+  relax: {
+    title: "Relaxed Beaches & Easy Swims",
+    theme: "Calm waters, easy pace",
+    bestTime: "Late morning or afternoon",
+    food: "🟢 Boodle fight / casual group meal",
+
+    destinations: [
+      {
+        name: "Sulangan & La Luna Beach",
+        duration: "2–3 hours",
+        note: "Swimming, family-friendly beach time"
+      },
+      {
+        name: "Moroboro (optional overlap)",
+        duration: "1 hour",
+        note: "Chill swim or sunset stop"
+      }
+    ],
+
+    foodExperience: {
+      title: "Beachside boodle fight or casual shared lunch",
+      note: "Ideal for families and groups"
+    },
+
+    cost: [
+      "Transport: ₱150 – ₱300",
+      "Entrance fees: ₱50 – ₱100",
+      "Food: ₱250 – ₱350"
+    ],
+
+    totalEstimate: "₱450 – ₱750",
+    websiteNote:
+      "This cluster is perfect if you want a slow, no-pressure beach day."
+  },
+
+};
+
 // PRICE = clusters × guests × nights
 function calculatePrice() {
   let total = 0;
