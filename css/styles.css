@@ -761,6 +761,13 @@ body {
 
 /* DISCREET DISCLAIMER */
 
+.itinerary-only {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .itinerary-disclaimer {
   position: fixed;
   bottom: 16px;
@@ -777,11 +784,6 @@ body {
   gap: 40px;
   margin-top: 80px;
   align-items: flex-start;
-}
-
-.itinerary-only {
-  display: flex;
-  gap: 16px;
 }
 
 .pill-container {
