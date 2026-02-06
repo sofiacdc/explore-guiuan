@@ -827,12 +827,6 @@ body {
   z-index: 10;
 }
 
-.dropdown label {
-  display: block;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-
 @keyframes softDrop {
   from {
     opacity: 0;
