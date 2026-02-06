@@ -30,17 +30,25 @@
     </div>
 
     <!-- DAYS -->
-    <div class="pill-container">
-      <button class="pill-btn" onclick="toggleDropdown('daysDrop')">
-        <span class="pill-title">Days</span>
-        <span class="pill-sub" id="daysSummary">Add dates</span>
-      </button>
+<div class="pill-container">
+  <button class="pill-btn" onclick="toggleDropdown('daysDrop')">
+    <span class="pill-title">Days</span>
+    <span class="pill-sub" id="daysSummary">Select dates</span>
+  </button>
 
-      <div class="dropdown calendar" id="daysDrop">
-        <input type="date" id="startDate">
-        <input type="date" id="endDate">
-      </div>
-    </div>
+  <div class="dropdown calendar-soft" id="daysDrop">
+    <p class="calendar-label">Start date</p>
+    <input type="date" id="startDate" class="soft-date">
+
+    <p class="calendar-label">End date</p>
+    <input type="date" id="endDate" class="soft-date">
+
+    <p class="calendar-note">
+      Choose freely. You can adjust your stay anytime.
+    </p>
+  </div>
+</div>
+
 
     <!-- GUESTS -->
     <div class="pill-container">
