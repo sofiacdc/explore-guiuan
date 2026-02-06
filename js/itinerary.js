@@ -101,14 +101,15 @@ function updateDaysHint() {
   }
 }
 
-// Recalculate on date change
 document.getElementById("startDate").addEventListener("change", () => {
   updateNightCount();
+  updateDaysHint();
   calculatePrice();
 });
 
 document.getElementById("endDate").addEventListener("change", () => {
   updateNightCount();
+  updateDaysHint();
   calculatePrice();
 });
 
