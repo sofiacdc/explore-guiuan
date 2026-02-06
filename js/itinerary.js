@@ -90,6 +90,17 @@ function updateNightCount() {
     `${nights} night${nights > 1 ? "s" : ""}`;
 }
 
+function updateDaysHint() {
+  const nights = getNights();
+  const hint = document.getElementById("daysHint");
+
+  if (nights >= 3 && nights <= 4) {
+    hint.innerText = "Most travelers choose 3–4 days";
+  } else {
+    hint.innerText = "";
+  }
+}
+
 // Recalculate on date change
 document.getElementById("startDate").addEventListener("change", () => {
   updateNightCount();
