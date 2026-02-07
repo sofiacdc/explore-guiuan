@@ -424,19 +424,22 @@ function updateItineraryDisclaimer() {
 
   const nights = getNights();
 
-  // Show disclaimer ONLY if 1 cluster + multiple nights
+  // Show disclaimer if ONE adventure is chosen
   if (checked.length === 1) {
     const adventureName =
       checked[0].parentElement.textContent.trim();
 
     note.innerHTML = `
-  <strong>About your stay</strong><br>
-  You selected <strong>${adventureName}</strong>${
-    nights > 1
-      ? ` for <strong>${nights} nights</strong>. We’ll thoughtfully spread these activities across your stay.`
-      : `. Once you select your dates, we’ll adjust this plan to fit your stay.`
-  }
-`;
+      <strong>About your stay</strong><br>
+      You selected <strong>${adventureName}</strong>${
+        nights > 1
+          ? ` for <strong>${nights} nights</strong>.`
+          : `.`
+      }
+      We’ll thoughtfully spread and adjust these activities across your stay —
+      allowing time to revisit favorites, slow down, and enjoy Guiuan at a relaxed pace.
+    `;
+
     note.classList.add('show');
   } else {
     note.classList.remove('show');
