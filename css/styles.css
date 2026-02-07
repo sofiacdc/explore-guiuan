@@ -1006,3 +1006,21 @@ body {
 .itinerary-buttons {
   display: none !important;
 }
+
+.itinerary-wrapper {
+  position: relative;
+}
+
+/* MOVE EXISTING PILL BUTTONS */
+.pill-container {
+  position: relative;
+}
+
+.itinerary-wrapper > .pill-container {
+  position: absolute;
+  top: 14vh;               /* 👈 upper middle */
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  gap: 1.5rem;
+}
