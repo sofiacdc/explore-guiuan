@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', () => {
+
 let guests = {
   adults: 0,
   children: 0,
@@ -37,11 +39,6 @@ function toggleDropdown(id) {
 }
 
 function updateGuests(type, value) {
-  guests[type] = Math.max(0, guests[type] + value);
-  document.getElementById(type).innerText = guests[type];
-
-  updateGuestSummary();
-  function updateGuests(type, value) {
   guests[type] = Math.max(0, guests[type] + value);
   document.getElementById(type).innerText = guests[type];
 
@@ -400,6 +397,7 @@ function updateDaysSummary() {
   } else {
     daysHint.classList.remove('show');
   }
+  updateItineraryDisclaimer();
 }
 
 
@@ -444,3 +442,4 @@ function updateItineraryDisclaimer() {
     note.innerHTML = '';
   }
 }
+});
