@@ -785,16 +785,20 @@ body {
 
 .dropdown {
   position: absolute;
-  top: 60px;
-  left: 0;
+  top: 70px;                 /* distance below pill */
+  left: 50%;
+  transform: translateX(-50%);
+
   background: white;
   border-radius: 12px;
   padding: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.12);
-  display: none;
   min-width: 260px;
+
+  display: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
   z-index: 10000;
 }
+
 
 /* FIX CHECKBOX ALIGNMENT – Airbnb style */
 .dropdown label {
