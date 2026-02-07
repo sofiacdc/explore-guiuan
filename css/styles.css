@@ -793,7 +793,7 @@ body {
   box-shadow: 0 10px 30px rgba(0,0,0,.12);
   display: none;
   min-width: 260px;
-  z-index: 10;
+  z-index: 10000;
 }
 
 /* FIX CHECKBOX ALIGNMENT – Airbnb style */
@@ -952,53 +952,24 @@ body {
 }
 
 /* ================================
-   FINAL ITINERARY LAYOUT (CLEAN)
-   ================================ */
-
-/* Wrapper */
-.itinerary-wrapper {
-  position: relative;
-  min-height: 100vh;
-}
-
-/* Airbnb-style pill group */
-.pill-group {
-  position: absolute;
-  top: 12vh;                 /* upper middle */
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 1.5rem;
-  z-index: 1000;
-}
-
-/* Lock price bottom-right */
-.price-panel {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  max-width: 260px;
-}
-
-/* ================================
    FINAL ITINERARY LAYOUT (AIRBNB)
    ================================ */
 
-/* Wrapper */
 .itinerary-wrapper {
   position: relative;
   min-height: 100vh;
+  z-index: 1;
 }
 
 /* Airbnb-style centered pill group */
 .pill-group {
   position: absolute;
-  top: 12vh;                /* upper middle */
+  top: 12vh;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   gap: 1.5rem;
-  z-index: 1000;
+  z-index: 9999;
 }
 
 /* Keep dropdowns positioned correctly */
@@ -1006,12 +977,26 @@ body {
   position: relative;
 }
 
-/* Estimated cost locked bottom-right */
-.price-panel {
-  position: fixed;
-  bottom: 160px;   /* ⬆ moves it above the disclaimer */
-  right: 24px;
-  max-width: 260px;
+/* Dropdown visibility fix */
+.dropdown {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  min-width: 260px;
+  display: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  z-index: 10000;
 }
 
+/* Estimated cost – lifted higher */
+.price-panel {
+  position: fixed;
+  bottom: 180px; /* ⬆ lifted above disclaimer */
+  right: 24px;
+  max-width: 260px;
+  z-index: 900;
+}
 
