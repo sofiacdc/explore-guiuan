@@ -205,3 +205,13 @@ document.addEventListener("click", () => {
 document.querySelectorAll(".pill-btn, .dropdown").forEach(el => {
   el.addEventListener("click", e => e.stopPropagation());
 });
+
+function setActivePill(clickedBtn) {
+  // remove active state from all pills
+  document.querySelectorAll('.pill-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  // activate the clicked pill
+  clickedBtn.classList.add('active');
+}
