@@ -405,3 +405,31 @@ function updateGuestSummary() {
 
   summary.textContent = total === 1 ? '1 guest' : `${total} guests`;
 }
+function updateItineraryDisclaimer() {
+  const checked = document.querySelectorAll(
+    '#adventureDrop input[type="checkbox"]:checked'
+  );
+
+  const note = document.getElementById('itineraryNote');
+  if (!note) return;
+
+  const nights = getNights();
+
+  // Show disclaimer ONLY if 1 cluster + multiple nights
+  if (checked.length === 1 && nights > 1) {
+    const adventureName =
+      checked[0].parentElement.textContent.trim();
+
+    note.innerHTML = `
+      <strong>About your stay</strong><br>
+      You selected <strong>${adventureName}</strong> for <strong>${nights} nights</strong>.
+      We’ll thoughtfully spread and adjust these activities across your stay —
+      allowing time to revisit favorites, slow down, and enjoy Guiuan at a relaxed pace.
+    `;
+
+    note.classList.add('show');
+  } else {
+    note.classList.remove('show');
+    note.innerHTML = '';
+  }
+}
