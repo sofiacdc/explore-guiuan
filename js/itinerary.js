@@ -294,3 +294,19 @@ function updateAdventureSummary() {
 
   summary.textContent = `${checked.length} experiences`;
 }
+
+function updateGuestSummary() {
+  const adults = parseInt(document.getElementById('adults').textContent);
+  const children = parseInt(document.getElementById('children').textContent);
+  const infant = parseInt(document.getElementById('infant').textContent);
+  const pwd = parseInt(document.getElementById('pwd').textContent);
+
+  const total = adults + children + infant + pwd;
+  const summary = document.getElementById('GuestSummary');
+
+  if (total <= 1) {
+    summary.textContent = '1 guest';
+  } else {
+    summary.textContent = `${total} guests`;
+  }
+}
