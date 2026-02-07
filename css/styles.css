@@ -1009,7 +1009,7 @@ body {
 /* Estimated cost locked bottom-right */
 .price-panel {
   position: fixed;
-  bottom: 180px;   /* ⬆ moves it above the disclaimer */
+  bottom: 160px;   /* ⬆ moves it above the disclaimer */
   right: 24px;
   max-width: 260px;
 }
