@@ -24,7 +24,7 @@
 
       <!-- ADVENTURE -->
       <div class="pill-container">
-        <button class="pill-btn" onclick="toggleDropdown('adventureDrop')">
+        <button class="pill-btn" onclick="setActivePill(this); toggleDropdown('adventureDrop')">
           <span class="pill-title">Adventure</span>
           <span class="pill-sub" id="adventureSummary">Choose experiences</span>
         </button>
@@ -54,7 +54,7 @@
 
       <!-- DAYS -->
       <div class="pill-container">
-        <button class="pill-btn" onclick="toggleDropdown('daysDrop')">
+       <button class="pill-btn" onclick="setActivePill(this); toggleDropdown('daysDrop')">
           <span class="pill-title">Days</span>
           <span class="pill-sub" id="daysSummary">Select dates</span>
         </button>
@@ -77,7 +77,7 @@
 
       <!-- GUESTS -->
       <div class="pill-container">
-        <button class="pill-btn" onclick="toggleDropdown('guestsDrop')">
+       <button class="pill-btn" onclick="setActivePill(this); toggleDropdown('guestsDrop')">
           <span class="pill-title">Guests</span>
           <span class="pill-sub" id="guestSummary">Add guests</span>
         </button>
