@@ -1055,3 +1055,40 @@ body {
   transform: translateY(-1px);
   box-shadow: 0 12px 28px rgba(0,0,0,.18);
 }
+
+/* === Upgrade pill buttons to choice-bubble style === */
+
+.pill-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  padding: 16px 22px;
+  min-width: 200px;
+
+  background: #ffffff;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  transition: all 0.25s ease;
+}
+
+.pill-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+}
+
+/* Label (Adventure / Days / Guests) */
+.pill-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f766e;
+  letter-spacing: 0.3px;
+}
+
+/* Value text */
+.pill-sub {
+  font-size: 14px;
+  color: #475569;
+}
