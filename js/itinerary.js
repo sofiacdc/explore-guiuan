@@ -41,10 +41,11 @@ function updateGuests(type, value) {
   document.getElementById(type).innerText = guests[type];
 
   updateGuestSummary();
-  if (Object.values(guests).reduce((a,b)=>a+b,0) === 0) {
-  document.getElementById('totalPrice').innerText = '₱0';
-  return;
-}
+  function updateGuests(type, value) {
+  guests[type] = Math.max(0, guests[type] + value);
+  document.getElementById(type).innerText = guests[type];
+
+  updateGuestSummary();
   calculatePrice();
 }
 
@@ -224,13 +225,20 @@ heritage: {
 
 // PRICE = clusters × guests × nights
 function calculatePrice() {
+  const guestCount = Object.values(guests).reduce((a, b) => a + b, 0);
+
+  // ✅ Guard: no guests → no estimate
+  if (guestCount === 0) {
+    document.getElementById('totalPrice').innerText = '₱0';
+    return;
+  }
+
   let total = 0;
 
   document.querySelectorAll('#adventureDrop input:checked').forEach(cb => {
     total += parseInt(cb.value);
   });
 
-  const guestCount = Object.values(guests).reduce((a,b)=>a+b,0);
   const nights = getNights();
   const seasonMultiplier = getSeasonMultiplier();
 
