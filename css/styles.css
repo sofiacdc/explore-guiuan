@@ -1092,3 +1092,10 @@ body {
   font-size: 14px;
   color: #475569;
 }
+
+/* Active / selected pill state */
+.pill-btn.active {
+  border-color: #14b8a6;
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.25);
+}
+
