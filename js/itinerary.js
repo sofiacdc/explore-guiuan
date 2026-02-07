@@ -41,6 +41,10 @@ function updateGuests(type, value) {
   document.getElementById(type).innerText = guests[type];
 
   updateGuestSummary();
+  if (Object.values(guests).reduce((a,b)=>a+b,0) === 0) {
+  document.getElementById('totalPrice').innerText = '₱0';
+  return;
+}
   calculatePrice();
 }
 
