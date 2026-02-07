@@ -61,10 +61,10 @@
 
         <div class="dropdown calendar-soft" id="daysDrop">
           <p class="calendar-label">Start date</p>
-          <input type="date" id="startDate" class="soft-date">
+          <input type="date" id="startDate" class="soft-date" onchange="updateDaysSummary()">
 
           <p class="calendar-label">End date</p>
-          <input type="date" id="endDate" class="soft-date">
+          <input type="date" id="endDate" class="soft-date" onchange="updateDaysSummary()">
           
           <p class="night-count" id="nightCount"></p>
           <p class="days-hint" id="daysHint"></p>
