@@ -223,7 +223,7 @@ function updateAdventureSummary() {
     '#adventureDrop input[type="checkbox"]:checked'
   );
 
-  const summary = document.getElementById('AdventureSummary');
+  const summary = document.getElementById('adventureSummary');
   if (!summary) return;
 
   if (checked.length === 0) {
