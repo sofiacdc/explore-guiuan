@@ -41,9 +41,8 @@ function updateGuests(type, value) {
   if (type === 'adults' && guests.adults === 0) guests.adults = 1;
 
   document.getElementById(type).innerText = guests[type];
-  document.getElementById('guestSummary').innerText =
-    Object.values(guests).reduce((a,b)=>a+b,0) + ' guests';
 
+  updateGuestSummary();
   calculatePrice();
 }
 
