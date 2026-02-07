@@ -1,5 +1,5 @@
 let guests = {
-  adults: 1,
+  adults: 0,
   children: 0,
   infant: 0,
   pwd: 0
@@ -38,8 +38,6 @@ function toggleDropdown(id) {
 
 function updateGuests(type, value) {
   guests[type] = Math.max(0, guests[type] + value);
-  if (type === 'adults' && guests.adults === 0) guests.adults = 1;
-
   document.getElementById(type).innerText = guests[type];
 
   updateGuestSummary();
