@@ -297,10 +297,7 @@ function updateAdventureSummary() {
   const summary = document.getElementById('adventureSummary');
   if (!summary) return;
 
-  // 👉 collect selected clusters
-  const clusterKeys = Array.from(checked).map(cb => cb.dataset.cluster);
-
-  // 👉 update pill text
+  // update pill text
   if (checked.length === 0) {
     summary.textContent = 'Choose experiences';
   } else if (checked.length === 1) {
@@ -309,10 +306,16 @@ function updateAdventureSummary() {
     summary.textContent = `${checked.length} experiences`;
   }
 
-  // ✅ THIS WAS MISSING
+  // collect selected clusters
+  const clusterKeys = Array.from(checked).map(cb => cb.dataset.cluster);
+
+  // render itinerary cards
   renderItineraryPreview(clusterKeys);
 
-  // optional auto-move
+  // ✅ THIS is where the disclaimer call goes
+  updateItineraryDisclaimer();
+
+  // optional auto-move to Days
   setTimeout(() => toggleDropdown('daysDrop'), 300);
 }
 
