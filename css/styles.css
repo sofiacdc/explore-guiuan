@@ -1004,3 +1004,24 @@ body {
   z-index: 900;
 }
 
+.back-btn {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+  cursor: pointer;
+  z-index: 10000;
+  box-shadow: 0 8px 20px rgba(0,0,0,.12);
+  transition: all .2s ease;
+}
+
+.back-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.18);
+}
