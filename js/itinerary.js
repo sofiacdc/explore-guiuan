@@ -215,3 +215,22 @@ function setActivePill(clickedBtn) {
   // activate the clicked pill
   clickedBtn.classList.add('active');
 }
+
+function updateAdventureSummary() {
+  const checked = document.querySelectorAll(
+    '#adventureDrop input[type="checkbox"]:checked'
+  );
+
+  if (!checked.length) {
+    adventureSummary.textContent = 'Choose experiences';
+    return;
+  }
+
+  const names = [...checked].map(cb =>
+    cb.closest('label').innerText.trim()
+  );
+
+  adventureSummary.textContent =
+    names.length > 2 ? `${names.length} adventures` : names.join(', ');
+}
+
