@@ -358,7 +358,7 @@ function renderItineraryPreview(clusterKeys) {
   }).join('');
 }
 
-  function updateDaysSummary() {
+function updateDaysSummary() {
   const start = document.getElementById('startDate').value;
   const end = document.getElementById('endDate').value;
   const summary = document.getElementById('DaysSummary');
@@ -374,15 +374,10 @@ function renderItineraryPreview(clusterKeys) {
 
   const startDate = new Date(start);
   const endDate = new Date(end);
-
-  const nights =
-    Math.round((endDate - startDate) / (1000 * 60 * 60 * 24));
+  const nights = Math.round((endDate - startDate) / (1000 * 60 * 60 * 24));
 
   const format = d =>
-    d.toLocaleDateString('en-US', {
-      month: 'short',
-      day: 'numeric'
-    });
+    d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 
   summary.textContent = `${format(startDate)} – ${format(endDate)}`;
   nightCount.textContent = `${nights} night${nights > 1 ? 's' : ''}`;
@@ -394,6 +389,7 @@ function renderItineraryPreview(clusterKeys) {
     daysHint.classList.remove('show');
   }
 }
+
 
 function updateGuestSummary() {
   const adults = parseInt(document.getElementById('adults').textContent);
