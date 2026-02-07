@@ -241,6 +241,45 @@ function updateAdventureSummary() {
   setTimeout(() => toggleDropdown('daysDrop'), 300);
 }
 
+function renderItineraryPreview(clusterKeys) {
+  const container = document.getElementById('itineraryPreview');
+  if (!container) return;
+
+  if (clusterKeys.length === 0) {
+    container.innerHTML = '';
+    return;
+  }
+
+  container.innerHTML = clusterKeys.map(key => {
+    const c = CLUSTERS[key];
+    if (!c) return '';
+
+    return `
+      <div class="itinerary-card animate-in">
+        <h3>${c.title}</h3>
+
+        <p><strong>Theme:</strong> ${c.theme}</p>
+        <p><strong>Best time:</strong> ${c.bestTime}</p>
+        <p><strong>Food style:</strong> ${c.food}</p>
+
+        <h4>Destinations & Suggested Duration</h4>
+        <ul>
+          ${c.destinations.map(d => `
+            <li>
+              <strong>${d.name}</strong> – ${d.duration}<br>
+              <span>${d.note}</span>
+            </li>
+          `).join('')}
+        </ul>
+
+        <h4>Food Experience</h4>
+        <p>${c.foodExperience.title}</p>
+        <small>${c.foodExperience.note}</small>
+      </div>
+    `;
+  }).join('');
+}
+
   function updateDaysSummary() {
   const start = document.getElementById('startDate').value;
   const end = document.getElementById('endDate').value;
