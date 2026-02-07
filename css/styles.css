@@ -1108,8 +1108,9 @@ body {
    ========================= */
 
 .itinerary-preview {
+  width: 100%;
   max-width: 900px;
-  margin: 6rem auto 2rem;
+  margin-top: 3rem;   /* ⬅ this controls distance from pills */
   padding: 0 1.5rem;
 }
 
