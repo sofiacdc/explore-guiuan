@@ -1003,3 +1003,6 @@ body {
   right: 24px;
   text-align: right;
 }
+.itinerary-buttons {
+  display: none !important;
+}
