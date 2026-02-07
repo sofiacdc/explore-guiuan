@@ -234,3 +234,24 @@ function updateAdventureSummary() {
     names.length > 2 ? `${names.length} adventures` : names.join(', ');
 }
 
+function updateAdventureSummary() {
+  const checked = document.querySelectorAll(
+    '#adventureDrop input[type="checkbox"]:checked'
+  );
+
+  const summary = document.getElementById('adventureSummary');
+
+  if (!summary) return;
+
+  if (checked.length === 0) {
+    summary.textContent = 'Choose experiences';
+    return;
+  }
+
+  if (checked.length === 1) {
+    summary.textContent = checked[0].parentElement.textContent.trim();
+    return;
+  }
+
+  summary.textContent = `${checked.length} experiences`;
+}
