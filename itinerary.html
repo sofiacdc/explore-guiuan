@@ -1,75 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Itinerary | Explore Guiuan</title>
-<link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/itinerary-fix.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Itinerary | Explore Guiuan</title>
 
+  <!-- Main styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- You can keep this or remove it if you are not using it anymore -->
+  <!-- <link rel="stylesheet" href="css/itinerary-fix.css"> -->
 </head>
 
 <body>
 
-<section class="itinerary-wrapper">
+  <section class="itinerary-wrapper">
 
-  <!-- CENTERED PILL GROUP (Airbnb-style) -->
-  <div class="pill-group">
+    <!-- CENTERED PILL GROUP (Airbnb-style) -->
+    <div class="pill-group">
 
-    <!-- ADVENTURE -->
-    <div class="pill-container">
-      <button class="pill-btn" onclick="toggleDropdown('adventureDrop')">
-        <span class="pill-title">Adventure</span>
-        <span class="pill-sub" id="adventureSummary">Choose experiences</span>
-      </button>
+      <!-- ADVENTURE -->
+      <div class="pill-container">
+        <button class="pill-btn" onclick="toggleDropdown('adventureDrop')">
+          <span class="pill-title">Adventure</span>
+          <span class="pill-sub" id="adventureSummary">Choose experiences</span>
+        </button>
 
-      <div id="adventureDrop" class="dropdown">
-        <!-- (UNCHANGED CONTENT) -->
+        <div id="adventureDrop" class="dropdown">
+          <label>
+            <input type="checkbox" value="1200" data-cluster="surf">
+            Surf &amp; Raw Pacific Coast (Calicoan Route)
+          </label>
+
+          <label>
+            <input type="checkbox" value="800" data-cluster="relax">
+            Relaxed Beaches &amp; Easy Swims
+          </label>
+
+          <label>
+            <input type="checkbox" value="1500" data-cluster="island">
+            Islands, Caves &amp; Water Adventure
+          </label>
+
+          <label>
+            <input type="checkbox" value="500" data-cluster="heritage">
+            Heritage, Faith &amp; Reflection
+          </label>
+        </div>
       </div>
+
+      <!-- DAYS -->
+      <div class="pill-container">
+        <button class="pill-btn" onclick="toggleDropdown('daysDrop')">
+          <span class="pill-title">Days</span>
+          <span class="pill-sub" id="daysSummary">Select dates</span>
+        </button>
+
+        <div class="dropdown calendar-soft" id="daysDrop">
+          <p class="calendar-label">Start date</p>
+          <input type="date" id="startDate" class="soft-date">
+
+          <p class="calendar-label">End date</p>
+          <input type="date" id="endDate" class="soft-date">
+          
+          <p class="night-count" id="nightCount"></p>
+          <p class="days-hint" id="daysHint"></p>
+
+          <p class="calendar-note">
+            Choose freely. You can adjust your stay anytime.
+          </p>
+        </div>
+      </div>
+
+      <!-- GUESTS -->
+      <div class="pill-container">
+        <button class="pill-btn" onclick="toggleDropdown('guestsDrop')">
+          <span class="pill-title">Guests</span>
+          <span class="pill-sub" id="guestSummary">Add guests</span>
+        </button>
+
+        <div class="dropdown" id="guestsDrop">
+
+          <div class="guest-row">
+            <span>Adults</span>
+            <div class="counter">
+              <button type="button" onclick="updateGuests('adults', -1)">−</button>
+              <span id="adults">1</span>
+              <button type="button" onclick="updateGuests('adults', 1)">+</button>
+            </div>
+          </div>
+
+          <div class="guest-row">
+            <span>Children</span>
+            <div class="counter">
+              <button type="button" onclick="updateGuests('children', -1)">−</button>
+              <span id="children">0</span>
+              <button type="button" onclick="updateGuests('children', 1)">+</button>
+            </div>
+          </div>
+
+          <div class="guest-row">
+            <span>Infant / Toddler</span>
+            <div class="counter">
+              <button type="button" onclick="updateGuests('infant', -1)">−</button>
+              <span id="infant">0</span>
+              <button type="button" onclick="updateGuests('infant', 1)">+</button>
+            </div>
+          </div>
+
+          <div class="guest-row">
+            <span>Seniors / PWD</span>
+            <div class="counter">
+              <button type="button" onclick="updateGuests('pwd', -1)">−</button>
+              <span id="pwd">0</span>
+              <button type="button" onclick="updateGuests('pwd', 1)">+</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div> <!-- END pill-group -->
+
+    <!-- ESTIMATED COST (bottom-right, above disclaimer) -->
+    <div class="price-panel">
+      <h3>Estimated Cost</h3>
+      <p class="price" id="totalPrice">₱0</p>
+      <p class="price-note">Prices vary by season, weather, and availability.</p>
+      <p class="estimate-note">
+        This is an estimate only. Final pricing may vary based on season, weather, group size, and availability.
+      </p>
     </div>
 
-    <!-- DAYS -->
-    <div class="pill-container">
-      <button class="pill-btn" onclick="toggleDropdown('daysDrop')">
-        <span class="pill-title">Days</span>
-        <span class="pill-sub" id="daysSummary">Select dates</span>
-      </button>
+  </section>
 
-      <div class="dropdown calendar-soft" id="daysDrop">
-        <!-- (UNCHANGED CONTENT) -->
-      </div>
-    </div>
+  <p class="itinerary-disclaimer">
+    Build Your Free-Flow Adventure. Choose what feels right for you. Everything is optional.
+  </p>
 
-    <!-- GUESTS -->
-    <div class="pill-container">
-      <button class="pill-btn" onclick="toggleDropdown('guestsDrop')">
-        <span class="pill-title">Guests</span>
-        <span class="pill-sub" id="guestSummary">Add guests</span>
-      </button>
-
-      <div class="dropdown" id="guestsDrop">
-        <!-- (UNCHANGED CONTENT) -->
-      </div>
-    </div>
-
-  </div> <!-- END pill-group -->
-
-  <!-- ESTIMATED COST (bottom-right) -->
-  <div class="price-panel">
-    <h3>Estimated Cost</h3>
-    <p class="price" id="totalPrice">₱0</p>
-    <p class="price-note">Prices vary by season, weather, and availability.</p>
-    <p class="estimate-note">
-      This is an estimate only. Final pricing may vary based on season, weather, group size, and availability.
-    </p>
-  </div>
-
-</section>
-
-<p class="itinerary-disclaimer">
-Build Your Free-Flow Adventure. Choose what feels right for you. Everything is optional.
-</p>
-
-<script src="js/itinerary.js"></script>
+  <script src="js/itinerary.js"></script>
 </body>
 </html>
