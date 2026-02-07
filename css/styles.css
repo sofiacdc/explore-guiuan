@@ -969,3 +969,27 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+.itinerary-page {
+  position: relative;
+  height: 100vh;
+}
+
+/* UPPER MIDDLE */
+.itinerary-buttons {
+  position: absolute;
+  top: 14vh;        /* 👈 controls vertical placement */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1.5rem;
+  z-index: 1000;
+}
+
+/* BOTTOM RIGHT */
+.estimated-cost {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  text-align: right;
+}
