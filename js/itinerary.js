@@ -225,8 +225,7 @@ function updateAdventureSummary() {
     '#adventureDrop input[type="checkbox"]:checked'
   );
 
-  const summary = document.getElementById('AdventureSummary');
-
+  const summary = document.getElementById('adventureSummary');
   if (!summary) return;
 
   if (checked.length === 0) {
@@ -236,10 +235,12 @@ function updateAdventureSummary() {
 
   if (checked.length === 1) {
     summary.textContent = checked[0].parentElement.textContent.trim();
-    return;
+  } else {
+    summary.textContent = `${checked.length} experiences`;
   }
 
-  summary.textContent = `${checked.length} experiences`;
+  // 👉 AUTO MOVE TO DAYS
+  setTimeout(() => toggleDropdown('daysDrop'), 300);
 }
 
   function updateDaysSummary() {
