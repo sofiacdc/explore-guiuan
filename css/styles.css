@@ -979,3 +979,38 @@ body {
   right: 24px;
   max-width: 260px;
 }
+
+/* ================================
+   FINAL ITINERARY LAYOUT (AIRBNB)
+   ================================ */
+
+/* Wrapper */
+.itinerary-wrapper {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Airbnb-style centered pill group */
+.pill-group {
+  position: absolute;
+  top: 12vh;                /* upper middle */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1.5rem;
+  z-index: 1000;
+}
+
+/* Keep dropdowns positioned correctly */
+.pill-container {
+  position: relative;
+}
+
+/* Estimated cost locked bottom-right */
+.price-panel {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  max-width: 260px;
+}
+
