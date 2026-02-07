@@ -253,5 +253,44 @@ function updateAdventureSummary() {
     return;
   }
 
+  function updateDaysSummary() {
+  const start = document.getElementById('startDate').value;
+  const end = document.getElementById('endDate').value;
+  const summary = document.getElementById('DaysSummary');
+  const nightCount = document.getElementById('nightCount');
+  const daysHint = document.getElementById('daysHint');
+
+  if (!start || !end) {
+    summary.textContent = 'Select dates';
+    nightCount.textContent = '';
+    daysHint.classList.remove('show');
+    return;
+  }
+
+  const startDate = new Date(start);
+  const endDate = new Date(end);
+
+  const nights =
+    Math.round((endDate - startDate) / (1000 * 60 * 60 * 24));
+
+  const format = d =>
+    d.toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric'
+    });
+
+  summary.textContent = `${format(startDate)} – ${format(endDate)}`;
+  nightCount.textContent = `${nights} night${nights > 1 ? 's' : ''}`;
+
+  // Soft suggestion
+  if (nights >= 3 && nights <= 4) {
+    daysHint.textContent = 'Perfect length for a relaxed Guiuan trip ✨';
+    daysHint.classList.add('show');
+  } else {
+    daysHint.classList.remove('show');
+  }
+}
+
+
   summary.textContent = `${checked.length} experiences`;
 }
