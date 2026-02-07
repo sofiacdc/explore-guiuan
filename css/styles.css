@@ -1099,3 +1099,71 @@ body {
   box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.25);
 }
 
+/* =========================
+   ITINERARY PREVIEW (ANIMATED)
+   ========================= */
+
+.itinerary-preview {
+  max-width: 900px;
+  margin: 6rem auto 2rem;
+  padding: 0 1.5rem;
+}
+
+.itinerary-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 2.2rem;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+
+  /* animation start state */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cardFadeSlide 0.5s ease forwards;
+}
+
+@keyframes cardFadeSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.itinerary-card h3 {
+  color: #0f766e;
+  margin-bottom: 0.75rem;
+}
+
+.itinerary-meta {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+
+.itinerary-section {
+  margin-top: 1.75rem;
+}
+
+.itinerary-section h4 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: #083344;
+}
+
+.itinerary-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.itinerary-list li {
+  margin-bottom: 0.9rem;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+.itinerary-list em {
+  color: #64748b;
+  font-style: normal;
+  font-size: 0.9rem;
+}
