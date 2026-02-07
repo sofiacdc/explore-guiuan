@@ -1201,3 +1201,26 @@ body {
     transform: translateY(0);
   }
 }
+
+.itinerary-note {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  max-width: 720px;
+
+  background: #f8fafc;
+  border-left: 4px solid #14b8a6;
+  border-radius: 12px;
+
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #475569;
+
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.35s ease;
+}
+
+.itinerary-note.show {
+  opacity: 1;
+  transform: translateY(0);
+}
