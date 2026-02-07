@@ -1024,3 +1024,24 @@ body {
   display: inline-flex;
   gap: 1.5rem;
 }
+
+/* === AIRBNB-STYLE CENTERED PILL GROUP === */
+
+.itinerary-wrapper {
+  position: relative;
+}
+
+/* Wrap all pill containers visually */
+.itinerary-wrapper > .pill-container {
+  position: absolute;
+  top: 12vh;                 /* upper middle */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Line pills horizontally */
+.itinerary-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
