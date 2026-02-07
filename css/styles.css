@@ -1045,3 +1045,9 @@ body {
   justify-content: center;
 }
 
+.price-panel {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  max-width: 260px;
+}
