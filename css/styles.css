@@ -1167,3 +1167,32 @@ body {
   font-style: normal;
   font-size: 0.9rem;
 }
+
+.itinerary-preview {
+  max-width: 900px;
+  margin: 6rem auto 2rem;
+  padding: 0 1.5rem;
+}
+
+.itinerary-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.animate-in {
+  animation: fadeSlideIn 0.5s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
