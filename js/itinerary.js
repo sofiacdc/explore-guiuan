@@ -145,6 +145,77 @@ const CLUSTERS = {
       "This cluster is perfect if you want a slow, no-pressure beach day."
   },
 
+  island: {
+    title: "Islands, Caves & Water Adventure",
+    theme: "Snorkeling, history, nature",
+    bestTime: "Early morning to mid-afternoon",
+    food: "🟢 Boodle fight / packed island meal",
+
+  destinations: [
+    {
+      name: "Pearl (Kantican) Island",
+      duration: "2–3 hours",
+      note: "Snorkeling, marine sanctuary"
+    },
+    {
+      name: "Handig Beach (Homonhon Island)",
+      duration: "1.5–2 hours",
+      note: "Historic site, quiet beach"
+    },
+    {
+      name: "Linao Cave",
+      duration: "30–45 minutes",
+      note: "Cave swim, quick adventure stop"
+    }
+  ],
+
+  foodExperience: {
+    title: "Island-style boodle fight",
+    note: "Usually done between island stops"
+  },
+
+  websiteNote:
+    "You don’t need to visit all stops in one day. Choose 1–2 highlights and enjoy them longer."
+},
+
+heritage: {
+  title: "Heritage, Faith & Reflection",
+  theme: "Culture, history, quiet moments",
+  bestTime: "Morning or late afternoon",
+  food: "🔵 Local eateries (no boodle fight)",
+
+  destinations: [
+    {
+      name: "Immaculate Concepcion Church",
+      duration: "30–45 minutes",
+      note: "Quiet visit, architecture, reflection"
+    },
+    {
+      name: "Sulangan Church",
+      duration: "30 minutes",
+      note: "Coastal shrine, peaceful stop"
+    },
+    {
+      name: "Kaunan ni Sangkay",
+      duration: "45 minutes–1 hour",
+      note: "Cultural stories, traditions, heritage"
+    },
+    {
+      name: "Veterans Park",
+      duration: "30–45 minutes",
+      note: "Cliffside views, sunrise or sunset walk"
+    }
+  ],
+
+  foodExperience: {
+    title: "Local carinderia or café nearby",
+    note: "Light meals or snacks only"
+  },
+
+  websiteNote:
+    "This cluster is best enjoyed slowly and respectfully."
+},
+
 };
 
 // PRICE = clusters × guests × nights
