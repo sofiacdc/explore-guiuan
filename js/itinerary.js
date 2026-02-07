@@ -48,7 +48,10 @@ function updateGuests(type, value) {
 
 // Adventure selection
 document.querySelectorAll('#adventureDrop input').forEach(cb => {
-  cb.addEventListener('change', calculatePrice);
+  cb.addEventListener('change', () => {
+    updateAdventureSummary();
+    calculatePrice();
+  });
 });
 
 // Calculate nights
@@ -187,12 +190,14 @@ function updateDaysHint() {
 document.getElementById("startDate").addEventListener("change", () => {
   updateNightCount();
   updateDaysHint();
+  updateDaysSummary();
   calculatePrice();
 });
 
 document.getElementById("endDate").addEventListener("change", () => {
   updateNightCount();
   updateDaysHint();
+  updateDaysSummary();
   calculatePrice();
 });
 
@@ -220,25 +225,7 @@ function updateAdventureSummary() {
     '#adventureDrop input[type="checkbox"]:checked'
   );
 
-  if (!checked.length) {
-    adventureSummary.textContent = 'Choose experiences';
-    return;
-  }
-
-  const names = [...checked].map(cb =>
-    cb.closest('label').innerText.trim()
-  );
-
-  adventureSummary.textContent =
-    names.length > 2 ? `${names.length} adventures` : names.join(', ');
-}
-
-function updateAdventureSummary() {
-  const checked = document.querySelectorAll(
-    '#adventureDrop input[type="checkbox"]:checked'
-  );
-
-  const summary = document.getElementById('adventureSummary');
+  const summary = document.getElementById('AdventureSummary');
 
   if (!summary) return;
 
@@ -251,6 +238,9 @@ function updateAdventureSummary() {
     summary.textContent = checked[0].parentElement.textContent.trim();
     return;
   }
+
+  summary.textContent = `${checked.length} experiences`;
+}
 
   function updateDaysSummary() {
   const start = document.getElementById('startDate').value;
@@ -281,17 +271,12 @@ function updateAdventureSummary() {
   summary.textContent = `${format(startDate)} – ${format(endDate)}`;
   nightCount.textContent = `${nights} night${nights > 1 ? 's' : ''}`;
 
-  // Soft suggestion
   if (nights >= 3 && nights <= 4) {
     daysHint.textContent = 'Perfect length for a relaxed Guiuan trip ✨';
     daysHint.classList.add('show');
   } else {
     daysHint.classList.remove('show');
   }
-}
-
-
-  summary.textContent = `${checked.length} experiences`;
 }
 
 function updateGuestSummary() {
@@ -303,9 +288,7 @@ function updateGuestSummary() {
   const total = adults + children + infant + pwd;
   const summary = document.getElementById('GuestSummary');
 
-  if (total <= 1) {
-    summary.textContent = '1 guest';
-  } else {
-    summary.textContent = `${total} guests`;
-  }
+  if (!summary) return;
+
+  summary.textContent = total === 1 ? '1 guest' : `${total} guests`;
 }
