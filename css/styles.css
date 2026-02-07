@@ -1025,3 +1025,33 @@ body {
   transform: translateY(-1px);
   box-shadow: 0 12px 28px rgba(0,0,0,.18);
 }
+
+.logo-back {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+  z-index: 10000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,.12);
+  transition: all .2s ease;
+}
+
+.logo-back img {
+  height: 28px;     /* adjust if needed */
+  width: auto;
+  display: block;
+}
+
+.logo-back:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.18);
+}
