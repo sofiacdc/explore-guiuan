@@ -784,6 +784,8 @@ body {
   gap: 40px;
   margin-top: 80px;
   align-items: flex-start;
+
+  position: relative;
 }
 
 .pill-container {
@@ -963,18 +965,26 @@ body {
   opacity: 0;
   transform: translateY(-4px);
   transition: opacity .25s ease, transform .25s ease;
-}
+}  
 
 .days-hint.show {
   opacity: 1;
   transform: translateY(0);
 }
 
+/* OVERLAY CONTAINER */
 .itinerary-page {
-  position: relative;
-  height: 100vh;
+  position: absolute;
+  inset: 0;
+  pointer-events: none; /* prevents blocking pills */
 }
 
+/* RE-ENABLE CLICKS */
+.itinerary-buttons,
+.estimated-cost {
+  pointer-events: auto;
+}
+  
 /* UPPER MIDDLE */
 .itinerary-buttons {
   position: absolute;
