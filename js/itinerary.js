@@ -226,18 +226,22 @@ function updateAdventureSummary() {
   const summary = document.getElementById('adventureSummary');
   if (!summary) return;
 
+  // 👉 collect selected clusters
+  const clusterKeys = Array.from(checked).map(cb => cb.dataset.cluster);
+
+  // 👉 update pill text
   if (checked.length === 0) {
     summary.textContent = 'Choose experiences';
-    return;
-  }
-
-  if (checked.length === 1) {
+  } else if (checked.length === 1) {
     summary.textContent = checked[0].parentElement.textContent.trim();
   } else {
     summary.textContent = `${checked.length} experiences`;
   }
 
-  // 👉 AUTO MOVE TO DAYS
+  // ✅ THIS WAS MISSING
+  renderItineraryPreview(clusterKeys);
+
+  // optional auto-move
   setTimeout(() => toggleDropdown('daysDrop'), 300);
 }
 
